@@ -1,0 +1,3 @@
+rootProject.name = 'TransAlt'
+
+include ':app'
