@@ -3,31 +3,16 @@ import {AppRegistry, View, Text, FlatList, ActivityIndicator, StyleSheet } from 
 import MyWebView from 'react-native-webview-autoheight';
 
 
-
-{/*
- @TODO
-
-* Implement navigation
-* Style text inside the WebView with our fonts (already done in a subfolder)
-* there is a big space under each item when loaded on android
-* if 24 hours have passed since last refresh, refresh automatically
-
-@TODO DONE!
-
-* fix html entities in titles (FIXED 2/9 by adding title to HTML blob)
-* Currently loading new posts is broken.  (fixed 2/8)
-* Posts also don't have the right height when they load in the WebView. (fixed 2/8)
-
-* images don't load, do a find-and-replace on the string (fixed 2/9)
-  */}
-
-
 const customStyle = "<style>* {max-width: 100%;} body {font-family: sans-serif;} h3 {color: #000;}</style>";
 
 
 
-
 class BikeForecast extends Component {
+
+    static navigationOptions = {
+      title: 'Bike Forecast'
+    }
+
   constructor(props) {
     super(props);
 
@@ -102,10 +87,6 @@ class BikeForecast extends Component {
     );
   };
 
-  renderHeader = () => {
-    return <View><Text style={styles.headerBar}>Bike Snob Forecast </Text></View>;
-  };
-
   renderFooter = () => {
     if (!this.state.loading) return null;
 
@@ -123,8 +104,16 @@ class BikeForecast extends Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation
+
     return (
       <View>
+
+      <Text
+      onPress={() =>
+          navigate('NavMenu')
+        }> Menu</Text>
+
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => (

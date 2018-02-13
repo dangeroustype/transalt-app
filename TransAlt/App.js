@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { AppRegistry, View, Text, FlatList, ActivityIndicator, StyleSheet } from "react-native";
-import MyWebView from 'react-native-webview-autoheight';
+import { AppRegistry } from "react-native";
 import { StackNavigator } from 'react-navigation'
 
+
 import BikeForecast from './components/BikeForecast'
+import NavMenu from './components/NavMenu'
 
 {/*
  @TODO
@@ -22,13 +23,13 @@ import BikeForecast from './components/BikeForecast'
 * images don't load, do a find-and-replace on the string (fixed 2/9)
   */}
 
-class App extends Component {
-  render() {
-    return (
-      <BikeForecast />
-    )
-  }
+
+const App = StackNavigator({
+  Home: { screen: BikeForecast},
+  NavMenu: { screen: NavMenu}
 }
+
+)
 
 export default App;
 
