@@ -7,11 +7,11 @@ const customStyle = "<style>* {max-width: 100%;} body {font-family: sans-serif;}
 
 
 
-class BikeForecast extends Component {
+class TravelAdvisories extends Component {
 
   static navigationOptions = ({ navigation, screenProps }) => ({
-    drawerLabel: "Bike Forecast",
-    title: "Bike Forecast",
+    drawerLabel: "Travel Advisories",
+    title: "Travel Advisories",
     headerLeft: (
       <View style={{ paddingHorizontal: 10 }}>
         <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
@@ -40,7 +40,7 @@ class BikeForecast extends Component {
 
     makeRemoteRequest = () => {
       const { page, seed } = this.state;
-      const url = `https://www.transalt.org/app/bikeforecast?page=${page}`;
+      const url = `https://www.transalt.org/app/bikeforecast/alerts?page=${page}`;
       this.setState({ loading: true });
 
       fetch(url)
@@ -112,10 +112,13 @@ class BikeForecast extends Component {
   };
 
   render() {
-
     return (
+
+
+
       <View>
 
+      
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => (
@@ -216,4 +219,4 @@ const styles = StyleSheet.create({
 
 
 
-export default BikeForecast;
+export default TravelAdvisories;

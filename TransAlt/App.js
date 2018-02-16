@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 import { AppRegistry } from "react-native";
-import { StackNavigator } from 'react-navigation'
+import { StackNavigator, DrawerNavigator } from "react-navigation";
 
 
 import BikeForecast from './components/BikeForecast'
-import NavMenu from './components/NavMenu'
+import TravelAdvisories from "./components/TravelAdvisories";
+import GetInvolved from "./components/GetInvolved";
+import Donate from "./components/Donate";
+import SendaTip from "./components/SendaTip";
+import Membership from "./components/Membership";
+import AboutUs from "./components/AboutUs";
+
+import DrawerMenu from "./components/DrawerMenu";
+
 
 {/*
  @TODO
@@ -23,15 +31,28 @@ import NavMenu from './components/NavMenu'
 * images don't load, do a find-and-replace on the string (fixed 2/9)
   */}
 
+  const MainScreenNavigator = StackNavigator({
+    BikeForecast: { screen: BikeForecast },
+    TravelAdvisories: { screen: TravelAdvisories },
+    SendaTip: { screen: SendaTip },
+    GetInvolved: { screen: GetInvolved },
+    Donate: { screen: Donate },
+    Membership: { screen: Membership },
+    AboutUs: { screen: AboutUs },
 
-const App = StackNavigator({
-  Home: { screen: BikeForecast},
-  NavMenu: { screen: NavMenu}
-}
+  });
 
-)
+  const App = DrawerNavigator(
+    {
+      Main: { screen: MainScreenNavigator }
+    },
+    {
+      contentComponent: DrawerMenu,
+      drawerWidth: 220
+    }
+  );
 
-export default App;
+  export default App;
 
 
 AppRegistry.registerComponent('BikeForecast', () => App);
