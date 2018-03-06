@@ -8,7 +8,7 @@ import {
   Image,
 } from "react-native";
 
-import Icon from "react-native-vector-icons/MaterialIcons";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 import { NavigationActions } from "react-navigation";
 
@@ -47,7 +47,7 @@ class DrawerMenu extends Component {
             this._navigate("BikeForecast", { isStatusBarHidden: false })}
         >
         <View style={styles.iconRow}>
-          <Icon name="today" size={24} color="#acacac" />
+          <Icon name="calendar" size={24} color="#acacac" />
         </View>
           <Text style={styles.menuItemText}>Bike Forecast</Text>
 
@@ -59,7 +59,7 @@ class DrawerMenu extends Component {
         >
 
         <View style={styles.iconRow}>
-          <Icon name="info" size={24} color="#acacac" />
+          <Icon name="exclamation-circle" size={24} color="#acacac" />
         </View>
           <Text style={styles.menuItemText}>Travel Advisories</Text>
 
@@ -71,7 +71,7 @@ class DrawerMenu extends Component {
           onPress={() => this._navigate("SendaTip", { isStatusBarHidden: false })}
         >
         <View style={styles.iconRow}>
-          <Icon name="send" size={24} color="#acacac" />
+          <Icon name="paper-plane" size={24} color="#acacac" />
           </View>
           <Text style={styles.menuItemText}>Send a Tip</Text>
 
@@ -82,7 +82,7 @@ class DrawerMenu extends Component {
           onPress={() => this._navigate("GetInvolved", { isStatusBarHidden: false })}
         >
             <View style={styles.iconRow}>
-          <Icon name="record-voice-over" size={24} color="#acacac" />
+          <Icon name="bullhorn" size={24} color="#acacac" />
             </View>
           <Text style={styles.menuItemText}>Get Involved</Text>
 
@@ -94,6 +94,9 @@ class DrawerMenu extends Component {
           style={styles.menuItem}
           onPress={() => this._navigate("Donate", { isStatusBarHidden: false })}
         >
+        <View style={styles.iconRow}>
+      <Icon name="star" size={24} color="#acacac" />
+        </View>
           <Text style={styles.menuItemText}>Donate</Text>
         </TouchableOpacity>
 
@@ -102,6 +105,9 @@ class DrawerMenu extends Component {
           style={styles.menuItem}
           onPress={() => this._navigate("Membership", { isStatusBarHidden: false })}
         >
+        <View style={styles.iconRow}>
+      <Icon name="heart" size={24} color="#acacac" />
+        </View>
           <Text style={styles.menuItemText}>Membership</Text>
         </TouchableOpacity>
 
@@ -109,6 +115,10 @@ class DrawerMenu extends Component {
           style={styles.menuItem}
           onPress={() => this._navigate("AboutUs", { isStatusBarHidden: false })}
         >
+
+        <View style={styles.iconRow}>
+      <Icon name="question-circle" size={24} color="#acacac" />
+        </View>
           <Text style={styles.menuItemText}>About us</Text>
         </TouchableOpacity>
 

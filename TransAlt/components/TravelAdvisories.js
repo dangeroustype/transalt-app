@@ -3,7 +3,7 @@ import {AppRegistry, View, TouchableOpacity, Text, FlatList, ActivityIndicator, 
 import MyWebView from 'react-native-webview-autoheight';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-const customStyle = "<style>* {max-width: 100%;} body {font-family: sans-serif;} h3 {color: #000;}</style>";
+const customStyle = "<style>* {max-width: 100%;} body {font-family: sans-serif;} h3 {color: #000;} .lastupdated {font-weight: bold; text-align: center;}</style>";
 
 
 
@@ -116,9 +116,10 @@ class TravelAdvisories extends Component {
 
 
 
-      <View>
+      <View style={styles.container}>
 
-      
+
+
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => (
@@ -151,14 +152,6 @@ class TravelAdvisories extends Component {
 
 const styles = StyleSheet.create({
 
-
-  titleView: {
-    paddingTop: 10,
-    fontSize: 22,
-    paddingBottom: 10,
-
-  },
-
   headerBar: {
     fontSize: 33,
     paddingTop: 35,
@@ -184,15 +177,15 @@ const styles = StyleSheet.create({
   },
   ListItem: {
     width: '100%',
-        backgroundColor: 'green'
   },
 
   container: {
     flex: 1,
+    backgroundColor: '#ffffff',
   },
 
   row: {
-    padding: 10,
+    marginLeft: 5,
     backgroundColor: '#ffffff',
     borderTopWidth: 1,
     marginBottom: -1,

@@ -4,11 +4,15 @@ import {
   View,
   WebView,
   TouchableOpacity,
+  StyleSheet,
+  TouchableHighlight,
 } from "react-native";
 
 import { NavigationActions } from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
+
+
 
 class SendaTip extends Component {
 
@@ -26,11 +30,16 @@ class SendaTip extends Component {
 
   render() {
 
+
+
     return (
 
-<View>
-<Text>Arthur needs to implement the form!</Text>
-</View>
+
+      <WebView
+  source={{uri: 'https://www.transalt.org/bike-forecast/tips'}}
+
+  />
+
 
 
     )
@@ -38,5 +47,23 @@ class SendaTip extends Component {
   }
 
 }
+
+
+const styles = StyleSheet.create({
+
+  tipicon: {
+     paddingTop: 10,
+    textAlign: 'center',
+  },
+
+  introText: {
+    padding: 20,
+    textAlign: 'center',
+  },
+
+
+
+
+  })
 
 export default SendaTip;
