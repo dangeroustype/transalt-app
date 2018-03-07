@@ -53,6 +53,14 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Gotham-Bold.ttf</string>
+		<string>Gotham-BoldItalic.ttf</string>
+		<string>Gotham-Book.ttf</string>
+		<string>Gotham-BookItalic.ttf</string>
+		<string>Gotham-Light.ttf</string>
+		<string>Gotham-LightItalic.ttf</string>
+		<string>Gotham-Medium.ttf</string>
+		<string>Gotham-MediumItalic.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
 		<string>Feather.ttf</string>

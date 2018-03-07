@@ -47,7 +47,7 @@ class DrawerMenu extends Component {
             this._navigate("BikeForecast", { isStatusBarHidden: false })}
         >
         <View style={styles.iconRow}>
-          <Icon name="calendar" size={24} color="#acacac" />
+          <Icon name="calendar" size={20} color="#acacac" />
         </View>
           <Text style={styles.menuItemText}>Bike Forecast</Text>
 
@@ -59,7 +59,7 @@ class DrawerMenu extends Component {
         >
 
         <View style={styles.iconRow}>
-          <Icon name="exclamation-circle" size={24} color="#acacac" />
+          <Icon name="exclamation-circle" size={20} color="#acacac" />
         </View>
           <Text style={styles.menuItemText}>Travel Advisories</Text>
 
@@ -71,7 +71,7 @@ class DrawerMenu extends Component {
           onPress={() => this._navigate("SendaTip", { isStatusBarHidden: false })}
         >
         <View style={styles.iconRow}>
-          <Icon name="paper-plane" size={24} color="#acacac" />
+          <Icon name="paper-plane" size={20} color="#acacac" />
           </View>
           <Text style={styles.menuItemText}>Send a Tip</Text>
 
@@ -82,7 +82,7 @@ class DrawerMenu extends Component {
           onPress={() => this._navigate("GetInvolved", { isStatusBarHidden: false })}
         >
             <View style={styles.iconRow}>
-          <Icon name="bullhorn" size={24} color="#acacac" />
+          <Icon name="bullhorn" size={20} color="#acacac" />
             </View>
           <Text style={styles.menuItemText}>Get Involved</Text>
 
@@ -95,7 +95,7 @@ class DrawerMenu extends Component {
           onPress={() => this._navigate("Donate", { isStatusBarHidden: false })}
         >
         <View style={styles.iconRow}>
-      <Icon name="star" size={24} color="#acacac" />
+      <Icon name="star" size={20} color="#acacac" />
         </View>
           <Text style={styles.menuItemText}>Donate</Text>
         </TouchableOpacity>
@@ -106,7 +106,7 @@ class DrawerMenu extends Component {
           onPress={() => this._navigate("Membership", { isStatusBarHidden: false })}
         >
         <View style={styles.iconRow}>
-      <Icon name="heart" size={24} color="#acacac" />
+      <Icon name="heart" size={20} color="#acacac" />
         </View>
           <Text style={styles.menuItemText}>Membership</Text>
         </TouchableOpacity>
@@ -117,7 +117,7 @@ class DrawerMenu extends Component {
         >
 
         <View style={styles.iconRow}>
-      <Icon name="question-circle" size={24} color="#acacac" />
+      <Icon name="question-circle" size={20} color="#acacac" />
         </View>
           <Text style={styles.menuItemText}>About us</Text>
         </TouchableOpacity>
@@ -140,8 +140,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#555555',
   },
   menuItemText: {
+    fontFamily: 'Gotham',
     color: '#ffffff',
-    fontSize: 18,
+    fontSize: 17,
     paddingLeft: 35,
   },
   iconRow: {

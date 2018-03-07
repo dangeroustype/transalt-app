@@ -115,7 +115,6 @@ class BikeForecast extends Component {
 
     return (
       <View>
-
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => (
@@ -189,6 +188,7 @@ const styles = StyleSheet.create({
   },
 
   row: {
+
     padding: 10,
     backgroundColor: '#ffffff',
     borderTopWidth: 1,
@@ -197,10 +197,6 @@ const styles = StyleSheet.create({
     borderTopColor: '#E5EDF5',
     borderBottomWidth: 1,
     justifyContent: 'center'
-  },
-  text: {
-    textAlign: 'center',
-    color: '#6da3d0'
   },
   navText: {
     color: '#6da3d0',

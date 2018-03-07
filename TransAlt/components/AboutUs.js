@@ -70,6 +70,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+
   },
   textcontainer: {
     paddingTop: 10,
@@ -77,13 +78,14 @@ var styles = StyleSheet.create({
 
   },
   firstparagraph: {
-
+    fontFamily: 'Gotham',
     color: '#0d9c4a',
     fontSize: 22,
     paddingBottom: 10,
   },
 
   paragraph: {
+    fontFamily: 'Gotham',
     color: '#363636',
     fontSize: 16,
     paddingBottom: 10,
