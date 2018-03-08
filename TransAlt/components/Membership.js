@@ -31,7 +31,7 @@ class Membership extends Component {
 
       <WebView
   source={{uri: 'https://www.transalt.org/membership'}}
-
+        startInLoadingState={true}
   />
 
 

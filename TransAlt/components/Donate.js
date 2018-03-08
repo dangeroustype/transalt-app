@@ -31,7 +31,7 @@ class Donate extends Component {
 
       <WebView
   source={{uri: 'https://secure.transalt.org/site/Donation2?df_id=11533&11533.donation=form1&pw_id=3581&s_src=2018mbr-web-member'}}
-
+      startInLoadingState={true}
   />
 
 
