@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import {AppRegistry, View, TouchableOpacity, Text, FlatList, ActivityIndicator, StyleSheet } from "react-native";
-import MyWebView from 'react-native-webview-autoheight';
+import HTMLView from 'react-native-htmlview';
 import Icon from "react-native-vector-icons/MaterialIcons";
-
-const customStyle = "<style>* {max-width: 100%;} body {font-family: sans-serif;} h3 {color: #000;} .lastupdated {font-weight: bold; text-align: center;}</style>";
-
 
 
 class TravelAdvisories extends Component {
@@ -126,11 +123,16 @@ class TravelAdvisories extends Component {
             <View style={styles.row}>
 
 
-              <MyWebView
-                  source={{html: customStyle + item.snippet, baseUrl: "https://www.transalt.org"}}
-                  startInLoadingState={true}
+
+
+              <HTMLView
+                  value={item.snippet.replace(/(\r\n\t|\n|\r\t)/gm,"")}
+                    startInLoadingState={true}
+                    stylesheet={styles}
+                    addLineBreaks={false}
 
               />
+              <Text style={styles.lastUpdatedText}>Last updated {item.changed} </Text>
 
 
                 </View>
@@ -164,6 +166,27 @@ const styles = StyleSheet.create({
     textAlign: 'center',
 
   },
+
+
+lastUpdatedText: {
+
+  color: '#666666',
+  textAlign: 'center',
+  padding: 15,
+  fontWeight: 'bold',
+
+},
+
+  a: {
+    color: '#009b40', // make links coloured pink
+  },
+
+  p: {
+    paddingBottom: 15,
+    fontFamily: 'Gotham',
+    fontSize: 19,
+  },
+
   WebViewParent: {
 
   },
@@ -181,17 +204,13 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
+    padding: 10,
     backgroundColor: '#ffffff',
   },
 
   row: {
     marginLeft: 5,
     backgroundColor: '#ffffff',
-    borderTopWidth: 1,
-    marginBottom: -1,
-    borderBottomColor: '#E5EDF5',
-    borderTopColor: '#E5EDF5',
-    borderBottomWidth: 1,
     justifyContent: 'center'
   },
   text: {
