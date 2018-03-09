@@ -10,6 +10,8 @@ import Donate from "./components/Donate";
 import SendaTip from "./components/SendaTip";
 import Membership from "./components/Membership";
 import AboutUs from "./components/AboutUs";
+import BoroScreen from "./components/BoroScreen";
+
 
 import DrawerMenu from "./components/DrawerMenu";
 
@@ -32,6 +34,7 @@ import DrawerMenu from "./components/DrawerMenu";
   */}
 
   const MainScreenNavigator = StackNavigator({
+
     BikeForecast: { screen: BikeForecast },
     TravelAdvisories: { screen: TravelAdvisories },
     SendaTip: { screen: SendaTip },
@@ -39,6 +42,7 @@ import DrawerMenu from "./components/DrawerMenu";
     Donate: { screen: Donate },
     Membership: { screen: Membership },
     AboutUs: { screen: AboutUs },
+    BoroScreen: { screen: BoroScreen },
 
   });
 
