@@ -52,7 +52,6 @@ class BoroScreen extends Component {
 
       <Text style={styles.firstparagraph}>You can make real, tangible changes to how streets and sidewalks function in your Neighborhood. Your local activist committee campaigns and fights for changes on-the-ground in their neighborhoods, like bike lanes and new pedestrian plazas. </Text>
 
-      <Text style={styles.choose}>See campaigns in your borough</Text>
 
 
 

@@ -37,7 +37,7 @@ class TravelAdvisories extends Component {
 
     makeRemoteRequest = () => {
       const { page, seed } = this.state;
-      const url = `https://www.transalt.org/app/bikeforecast/alerts?page=${page}`;
+      const url = `https://www.transalt.org/app/bikeforecast/alerts?_format=json&page=${page}`;
       this.setState({ loading: true });
 
       fetch(url)
