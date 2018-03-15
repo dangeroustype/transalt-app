@@ -24,6 +24,7 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		144E15892D18428B80AA3968 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA4954344E04D00B9CC84AE /* Feather.ttf */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		1C5E041389E8AF620285CE8C /* libPods-TransAlt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5387329664EF092C7F977A /* libPods-TransAlt.a */; };
 		1F773BA019A64B4E84034B3F /* Gotham-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D95531A9E09449F8B4FBC86 /* Gotham-LightItalic.ttf */; };
 		292FFC25C8444CB6B5E8D2E6 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D2DB426B65E4807831F3F22 /* Octicons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -57,6 +58,7 @@
 		BEC31CEE24704400BFCA75E7 /* Gotham-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16942D3C195F43CAA38D49CF /* Gotham-BookItalic.ttf */; };
 		C2F492F7038C4AB4AF683AD8 /* Gotham-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3383327B99F45A58CE97349 /* Gotham-BoldItalic.ttf */; };
 		CDF63E3A6CB94EADB0824EAB /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38167BFFAB044346857BFC09 /* Entypo.ttf */; };
+		F18585216E9CE37CF749763E /* libPods-TransAltTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F78BDCDF6DCD8F9FA7D02D2 /* libPods-TransAltTests.a */; };
 		FD581F44C6D440799637C182 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE8A251EE1B48A3BF08BEF2 /* libRNVectorIcons.a */; };
 /* End PBXBuildFile section */
 
@@ -369,6 +371,7 @@
 		00E356F21AD99517003FC87E /* TransAltTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransAltTests.m; sourceTree = "<group>"; };
 		041D9E010C5C4303B80B1C86 /* Gotham-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Book.ttf"; path = "../assets/fonts/Gotham/Gotham-Book.ttf"; sourceTree = "<group>"; };
 		07E1FF13E17B428CAABE957A /* Gotham-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Bold.ttf"; path = "../assets/fonts/Gotham/Gotham-Bold.ttf"; sourceTree = "<group>"; };
+		11F011DF57D48BEC463ACE58 /* Pods-TransAlt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransAlt.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransAlt/Pods-TransAlt.release.xcconfig"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TransAlt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransAlt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,14 +393,17 @@
 		2D02E47B1E0B4A5D006451C7 /* TransAlt-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TransAlt-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* TransAlt-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TransAlt-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F78BDCDF6DCD8F9FA7D02D2 /* libPods-TransAltTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransAltTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3204EF1DB4D8487B8773E663 /* Gotham-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Light.ttf"; path = "../assets/fonts/Gotham/Gotham-Light.ttf"; sourceTree = "<group>"; };
 		38167BFFAB044346857BFC09 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		5D95531A9E09449F8B4FBC86 /* Gotham-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-LightItalic.ttf"; path = "../assets/fonts/Gotham/Gotham-LightItalic.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		6486616AFE21487F2C7AEE59 /* Pods-TransAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransAltTests/Pods-TransAltTests.debug.xcconfig"; sourceTree = "<group>"; };
 		77863F4E0ABA454283192447 /* Gotham-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Medium.ttf"; path = "../assets/fonts/Gotham/Gotham-Medium.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8E4CBA43686D4170BE7129DC /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		8FA1F94FF0C025D1A933CA55 /* Pods-TransAlt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransAlt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransAlt/Pods-TransAlt.debug.xcconfig"; sourceTree = "<group>"; };
 		96255F55A4884A7F89550936 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		AF0A1EC36E3445C1A3618A2F /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -405,7 +411,9 @@
 		B3383327B99F45A58CE97349 /* Gotham-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-BoldItalic.ttf"; path = "../assets/fonts/Gotham/Gotham-BoldItalic.ttf"; sourceTree = "<group>"; };
 		B506BA3D47DF45B0B8EE6D2E /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		C970F5BEC9B34B2F92A3116B /* Gotham-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-MediumItalic.ttf"; path = "../assets/fonts/Gotham/Gotham-MediumItalic.ttf"; sourceTree = "<group>"; };
+		DA5387329664EF092C7F977A /* libPods-TransAlt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransAlt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98CF88A49A24B15A0F81902 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		EAB958E148EB4A99DC18F6A1 /* Pods-TransAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransAltTests/Pods-TransAltTests.release.xcconfig"; sourceTree = "<group>"; };
 		FED9E169CF674009804132CD /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -415,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				F18585216E9CE37CF749763E /* libPods-TransAltTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +446,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				FD581F44C6D440799637C182 /* libRNVectorIcons.a in Frameworks */,
 				4E0FD0FC062944B48ACC9DE0 /* libRNFirebase.a in Frameworks */,
+				1C5E041389E8AF620285CE8C /* libPods-TransAlt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +621,8 @@
 			isa = PBXGroup;
 			children = (
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
+				DA5387329664EF092C7F977A /* libPods-TransAlt.a */,
+				2F78BDCDF6DCD8F9FA7D02D2 /* libPods-TransAltTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -622,6 +634,17 @@
 				5E9157351DD0AC6500FF2AA8 /* libRCTAnimation.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5EDA2A58510CA694A8839D50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FA1F94FF0C025D1A933CA55 /* Pods-TransAlt.debug.xcconfig */,
+				11F011DF57D48BEC463ACE58 /* Pods-TransAlt.release.xcconfig */,
+				6486616AFE21487F2C7AEE59 /* Pods-TransAltTests.debug.xcconfig */,
+				EAB958E148EB4A99DC18F6A1 /* Pods-TransAltTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
@@ -673,6 +696,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				1541D62C865A4BC9B8F6A1D6 /* Resources */,
 				E4DDCE592059B28400AEB39E /* Recovered References */,
+				5EDA2A58510CA694A8839D50 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -731,9 +755,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TransAltTests" */;
 			buildPhases = (
+				FDD88ABE44AC986CDD658539 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				2FAD70E3A0BA5214477DA6FC /* [CP] Embed Pods Frameworks */,
+				60B0B8D0300C850E59E6AC96 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -749,10 +776,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TransAlt" */;
 			buildPhases = (
+				602C861FD6741E33D38539B8 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				D840DC6DFB4294549ADDFC89 /* [CP] Embed Pods Frameworks */,
+				1C7594208831EC8772AE6AD1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1252,6 +1282,21 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		1C7594208831EC8772AE6AD1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransAlt/Pods-TransAlt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1265,6 +1310,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		2FAD70E3A0BA5214477DA6FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransAltTests/Pods-TransAltTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		602C861FD6741E33D38539B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransAlt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60B0B8D0300C850E59E6AC96 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransAltTests/Pods-TransAltTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D840DC6DFB4294549ADDFC89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransAlt/Pods-TransAlt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDD88ABE44AC986CDD658539 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransAltTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1338,6 +1464,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6486616AFE21487F2C7AEE59 /* Pods-TransAltTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = J7U259YXPB;
@@ -1368,6 +1495,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAB958E148EB4A99DC18F6A1 /* Pods-TransAltTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1395,6 +1523,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FA1F94FF0C025D1A933CA55 /* Pods-TransAlt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1420,6 +1549,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11F011DF57D48BEC463ACE58 /* Pods-TransAlt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
