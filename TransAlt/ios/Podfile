@@ -7,7 +7,8 @@ target 'TransAlt' do
 
   # Pods for TransAlt
   pod 'Firebase/Core'
-  pod 'Firebase/Crash'
+  pod 'Fabric', '~> 1.7.2'
+  pod 'Crashlytics', '~> 3.9.3'
   pod 'Firebase/Messaging'
   pod 'Firebase/Performance'
 

@@ -786,6 +786,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				D840DC6DFB4294549ADDFC89 /* [CP] Embed Pods Frameworks */,
 				1C7594208831EC8772AE6AD1 /* [CP] Copy Pods Resources */,
+				E4DA7431205C5C8F0079D066 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -1377,6 +1378,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransAlt/Pods-TransAlt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E4DA7431205C5C8F0079D066 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
 		};
 		FDD88ABE44AC986CDD658539 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
