@@ -7,6 +7,8 @@ target 'TransAlt' do
 
   # Pods for TransAlt
   pod 'Firebase/Core'
+  pod 'Firebase/Crash'
+  pod 'Firebase/Messaging'
 
   end
 
