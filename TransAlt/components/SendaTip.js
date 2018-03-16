@@ -92,9 +92,7 @@ const options = {
   stylesheet: formStyles,
 };
 
-componentDidMount() {
-  firebase.analytics().setCurrentScreen('SendaTip');
-}
+
 
 class SendaTip extends Component {
 
@@ -131,7 +129,9 @@ fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
 
   }
 
-
+  componentDidMount() {
+    firebase.analytics().setCurrentScreen('SendaTip');
+  }
 
   render() {
     return (
