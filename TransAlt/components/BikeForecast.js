@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {AppRegistry, View, TouchableOpacity, Text, FlatList, ActivityIndicator, StyleSheet } from "react-native";
 import MyWebView from 'react-native-webview-autoheight';
 import Icon from "react-native-vector-icons/MaterialIcons";
+import firebase from 'react-native-firebase';
 
 const customStyle = "<style>* {max-width: 100%;} body {font-family: sans-serif;} h3 {color: #000;}</style>";
 
@@ -35,6 +36,7 @@ class BikeForecast extends Component {
 
   componentDidMount() {
     this.makeRemoteRequest();
+    firebase.analytics().setCurrentScreen('BikeForecast');
   }
 
 
@@ -112,6 +114,7 @@ class BikeForecast extends Component {
   };
 
   render() {
+
 
     return (
       <View>

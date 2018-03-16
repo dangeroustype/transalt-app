@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import firebase from 'react-native-firebase';
+
 import { NavigationActions } from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -23,6 +25,10 @@ class Donate extends Component {
       </View>
     )
   });
+
+  componentDidMount() {
+    firebase.analytics().setCurrentScreen('Donate');
+  }
 
   render() {
 

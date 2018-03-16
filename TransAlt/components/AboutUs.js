@@ -10,6 +10,8 @@ import {
   ScrollView
 } from "react-native";
 
+import firebase from 'react-native-firebase';
+
 import { NavigationActions } from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -30,11 +32,17 @@ class AboutUs extends Component {
     )
   });
 
+  componentDidMount() {
+    firebase.analytics().setCurrentScreen('AboutUs');
+  }
 
 
   render() {
 
     return (
+
+
+
       <ScrollView style={styles.container}>
 
 

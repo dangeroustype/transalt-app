@@ -8,6 +8,8 @@ import {
   Image,
 } from "react-native";
 
+import firebase from 'react-native-firebase';
+
 import Icon from "react-native-vector-icons/FontAwesome";
 
 import { NavigationActions } from "react-navigation";

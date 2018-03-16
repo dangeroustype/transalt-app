@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {AppRegistry, View, TouchableOpacity, Text, FlatList, ActivityIndicator, StyleSheet } from "react-native";
 import HTMLView from 'react-native-htmlview';
 import Icon from "react-native-vector-icons/MaterialIcons";
-
+import firebase from 'react-native-firebase';
 
 class TravelAdvisories extends Component {
 
@@ -32,6 +32,7 @@ class TravelAdvisories extends Component {
 
   componentDidMount() {
     this.makeRemoteRequest();
+      firebase.analytics().setCurrentScreen('TravelAdvisories');
   }
 
 

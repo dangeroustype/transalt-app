@@ -11,6 +11,8 @@ import {
   Button
 } from "react-native";
 
+import firebase from 'react-native-firebase';
+
 import { NavigationActions } from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -32,6 +34,9 @@ class BoroScreen extends Component {
     )
   });
 
+  componentDidMount() {
+    firebase.analytics().setCurrentScreen('BoroScreen');
+  }
 
   render() {
       console.log(this.props.navigation.state.params.committee)

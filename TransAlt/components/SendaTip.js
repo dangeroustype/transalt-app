@@ -9,6 +9,8 @@ import {
   Button
 } from "react-native";
 
+import firebase from 'react-native-firebase';
+
 import { NavigationActions } from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -89,6 +91,10 @@ const options = {
   },
   stylesheet: formStyles,
 };
+
+componentDidMount() {
+  firebase.analytics().setCurrentScreen('SendaTip');
+}
 
 class SendaTip extends Component {
 

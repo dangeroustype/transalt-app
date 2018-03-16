@@ -11,6 +11,8 @@ import {
   TouchableHighlight
 } from "react-native";
 
+import firebase from 'react-native-firebase';
+
 import {NavigationActions} from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -27,6 +29,10 @@ class GetInvolved extends Component {
       <Icon name="menu" size={30} color="#666"/>
     </TouchableOpacity>
   </View>)});
+
+  componentDidMount() {
+    firebase.analytics().setCurrentScreen('GetInvolved');
+  }
 
   render() {
 

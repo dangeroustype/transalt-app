@@ -58,6 +58,7 @@
 		BEC31CEE24704400BFCA75E7 /* Gotham-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16942D3C195F43CAA38D49CF /* Gotham-BookItalic.ttf */; };
 		C2F492F7038C4AB4AF683AD8 /* Gotham-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3383327B99F45A58CE97349 /* Gotham-BoldItalic.ttf */; };
 		CDF63E3A6CB94EADB0824EAB /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38167BFFAB044346857BFC09 /* Entypo.ttf */; };
+		E450CF1A205C1E8800B99B5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E450CEF2205C1E8800B99B5B /* GoogleService-Info.plist */; };
 		F18585216E9CE37CF749763E /* libPods-TransAltTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F78BDCDF6DCD8F9FA7D02D2 /* libPods-TransAltTests.a */; };
 		FD581F44C6D440799637C182 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE8A251EE1B48A3BF08BEF2 /* libRNVectorIcons.a */; };
 /* End PBXBuildFile section */
@@ -412,6 +413,7 @@
 		B506BA3D47DF45B0B8EE6D2E /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		C970F5BEC9B34B2F92A3116B /* Gotham-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-MediumItalic.ttf"; path = "../assets/fonts/Gotham/Gotham-MediumItalic.ttf"; sourceTree = "<group>"; };
 		DA5387329664EF092C7F977A /* libPods-TransAlt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransAlt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E450CEF2205C1E8800B99B5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "TransAlt/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E98CF88A49A24B15A0F81902 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		EAB958E148EB4A99DC18F6A1 /* Pods-TransAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransAltTests/Pods-TransAltTests.release.xcconfig"; sourceTree = "<group>"; };
 		FED9E169CF674009804132CD /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 		1541D62C865A4BC9B8F6A1D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E450CEF2205C1E8800B99B5B /* GoogleService-Info.plist */,
 				07E1FF13E17B428CAABE957A /* Gotham-Bold.ttf */,
 				B3383327B99F45A58CE97349 /* Gotham-BoldItalic.ttf */,
 				041D9E010C5C4303B80B1C86 /* Gotham-Book.ttf */,
@@ -1245,6 +1248,7 @@
 				4FD0A9B72FAE4E7C9423EB7C /* MaterialCommunityIcons.ttf in Resources */,
 				894254C98F6C4F45A3D87A26 /* MaterialIcons.ttf in Resources */,
 				292FFC25C8444CB6B5E8D2E6 /* Octicons.ttf in Resources */,
+				E450CF1A205C1E8800B99B5B /* GoogleService-Info.plist in Resources */,
 				6AD38878550D46E48A8FF0BD /* SimpleLineIcons.ttf in Resources */,
 				9CC95C328CC5425BA3AC37A6 /* Zocial.ttf in Resources */,
 			);
