@@ -7,6 +7,7 @@ import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.crash.RNFirebaseCrashPackage;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
+import io.invertase.firebase.perf.RNFirebasePerformancePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -32,7 +33,8 @@ public class MainApplication extends Application implements ReactApplication {
             new RNFirebaseAnalyticsPackage(),
             new VectorIconsPackage(),
             new RNFirebaseCrashPackage(),
-            new RNFirebaseMessagingPackage() 
+            new RNFirebaseMessagingPackage(),
+            new RNFirebasePerformancePackage()
       );
     }
 
