@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#555555',
   },
   menuItemText: {
-    fontFamily: 'Gotham',
+    fontFamily: 'Gotham-Book',
     color: '#ffffff',
     fontSize: 17,
     paddingLeft: 35,

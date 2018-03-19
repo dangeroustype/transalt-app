@@ -136,6 +136,7 @@ var styles = StyleSheet.create({
     overflow: 'hidden'
   },
   borobuttontext: {
+    fontFamily: 'Gotham-Book',
     textAlign: 'center',
     fontSize: 19
   },
@@ -145,13 +146,13 @@ var styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   firstparagraph: {
-    fontFamily: 'Gotham',
+    fontFamily: 'Gotham-Book',
     color: '#0d9c4a',
     fontSize: 15,
     padding: 10
   },
   choose: {
-    fontFamily: 'Gotham',
+    fontFamily: 'Gotham-Book',
     fontSize: 19,
     padding: 10,
     textAlign: 'center'

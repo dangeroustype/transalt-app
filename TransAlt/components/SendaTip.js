@@ -172,6 +172,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     fontSize: 19,
     textAlign: 'center',
+    fontFamily: 'Gotham-Book',
 
   },
 

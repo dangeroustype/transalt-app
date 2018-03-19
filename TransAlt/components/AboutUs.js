@@ -86,14 +86,14 @@ var styles = StyleSheet.create({
 
   },
   firstparagraph: {
-    fontFamily: 'Gotham',
+    fontFamily: 'Gotham-Book',
     color: '#0d9c4a',
     fontSize: 22,
     paddingBottom: 10,
   },
 
   paragraph: {
-    fontFamily: 'Gotham',
+    fontFamily: 'Gotham-Book',
     color: '#363636',
     fontSize: 16,
     paddingBottom: 10,

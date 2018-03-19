@@ -174,7 +174,7 @@ lastUpdatedText: {
   color: '#666666',
   textAlign: 'center',
   padding: 15,
-  fontWeight: 'bold',
+  fontFamily: 'Gotham-Bold',
 
 },
 
@@ -184,8 +184,11 @@ lastUpdatedText: {
 
   p: {
     paddingBottom: 15,
-    fontFamily: 'Gotham',
+    fontFamily: 'Gotham-Book',
     fontSize: 19,
+  },
+  strong: {
+        fontFamily: 'Gotham-Bold',
   },
 
   WebViewParent: {

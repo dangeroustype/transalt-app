@@ -37,6 +37,7 @@ class BikeForecast extends Component {
   componentDidMount() {
     this.makeRemoteRequest();
     firebase.analytics().setCurrentScreen('BikeForecast');
+    firebase.fabric.crashlytics().crash();
   }
 
 
@@ -125,7 +126,10 @@ class BikeForecast extends Component {
 
 
               <MyWebView
-                  source={{html: customStyle + item.snippet, baseUrl: "https://www.transalt.org"}}
+                  source={{
+                      html: customStyle + item.snippet,
+                      baseUrl: "https://www.transalt.org"
+                    }}
                   startInLoadingState={true}
 
               />

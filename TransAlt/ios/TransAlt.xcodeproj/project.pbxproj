@@ -414,6 +414,7 @@
 		C970F5BEC9B34B2F92A3116B /* Gotham-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-MediumItalic.ttf"; path = "../assets/fonts/Gotham/Gotham-MediumItalic.ttf"; sourceTree = "<group>"; };
 		DA5387329664EF092C7F977A /* libPods-TransAlt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransAlt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E450CEF2205C1E8800B99B5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "TransAlt/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E470F6AC20605947004F550E /* TransAlt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TransAlt.entitlements; path = TransAlt/TransAlt.entitlements; sourceTree = "<group>"; };
 		E98CF88A49A24B15A0F81902 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		EAB958E148EB4A99DC18F6A1 /* Pods-TransAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransAltTests/Pods-TransAltTests.release.xcconfig"; sourceTree = "<group>"; };
 		FED9E169CF674009804132CD /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
@@ -559,6 +560,7 @@
 		13B07FAE1A68108700A75B9A /* TransAlt */ = {
 			isa = PBXGroup;
 			children = (
+				E470F6AC20605947004F550E /* TransAlt.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -850,6 +852,14 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = J7U259YXPB;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1545,6 +1555,7 @@
 			baseConfigurationReference = 8FA1F94FF0C025D1A933CA55 /* Pods-TransAlt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TransAlt/TransAlt.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = J7U259YXPB;
@@ -1571,6 +1582,7 @@
 			baseConfigurationReference = 11F011DF57D48BEC463ACE58 /* Pods-TransAlt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TransAlt/TransAlt.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J7U259YXPB;
 				HEADER_SEARCH_PATHS = (

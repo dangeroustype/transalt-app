@@ -85,7 +85,7 @@ var styles = StyleSheet.create({
 
   },
   firstparagraph: {
-    fontFamily: 'Gotham',
+    fontFamily: 'Gotham-Book',
     color: '#0d9c4a',
     fontSize: 15,
     padding: 10,
@@ -98,7 +98,7 @@ var styles = StyleSheet.create({
 
   boroheadertxt: {
         textAlign: 'center',
-        fontFamily: 'Gotham',
+        fontFamily: 'Gotham-Book',
         fontSize: 19,
         padding: 15,
         fontWeight: 'bold'
