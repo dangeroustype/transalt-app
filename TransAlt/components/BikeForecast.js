@@ -37,7 +37,6 @@ class BikeForecast extends Component {
   componentDidMount() {
     this.makeRemoteRequest();
     firebase.analytics().setCurrentScreen('BikeForecast');
-    firebase.fabric.crashlytics().crash();
   }
 
 
