@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Dimensions,
   Image,
+  Linking,
   TouchableHighlight
 } from "react-native";
 
@@ -47,7 +48,7 @@ class GetInvolved extends Component {
 
       <View style={styles.flex}>
         <TouchableHighlight style={styles.borobutton} onPress={() => {
-            this.props.navigation.navigate('BoroScreen', {committee: 'Manhattan'})
+             Linking.openURL('https://www.transalt.org/manhattan')
 
           }}>
           <Text style={styles.borobuttontext}>
@@ -57,7 +58,7 @@ class GetInvolved extends Component {
 
 
         <TouchableHighlight style={styles.borobutton} onPress={() => {
-            this.props.navigation.navigate('BoroScreen', {committee: 'Brooklyn'})
+             Linking.openURL('https://www.transalt.org/brooklyn')
 
           }}>
 
@@ -70,7 +71,7 @@ class GetInvolved extends Component {
       <View style={styles.flex}>
 
       <TouchableHighlight style={styles.borobutton} onPress={() => {
-          this.props.navigation.navigate('BoroScreen', {committee: 'Queens'})
+           Linking.openURL('https://www.transalt.org/queens')
 
         }}>
 
@@ -79,7 +80,7 @@ class GetInvolved extends Component {
         </Text>
         </TouchableHighlight>
         <TouchableHighlight style={styles.borobutton} onPress={() => {
-            this.props.navigation.navigate('BoroScreen', {committee: 'Bronx'})
+               Linking.openURL('https://www.transalt.org/bronx')
 
           }}>
 
@@ -93,7 +94,8 @@ class GetInvolved extends Component {
 
 
               <TouchableHighlight style={styles.borobutton} onPress={() => {
-                  this.props.navigation.navigate('BoroScreen', {committee: '  Staten Island'})
+                 Linking.openURL('https://www.transalt.org/statenisland')
+
 
                 }}>
         <Text style={styles.borobuttontext}>

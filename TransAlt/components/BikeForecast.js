@@ -37,7 +37,25 @@ class BikeForecast extends Component {
   componentDidMount() {
     this.makeRemoteRequest();
     firebase.analytics().setCurrentScreen('BikeForecast');
+
+
+    firebase.messaging().requestPermissions(); //for IOS
+
+        firebase.messaging().getToken().then((token) => {
+        //  manager.setNotificationToken(token);
+          console.log('Device FCM Token: ', token);
+        });
+
+        firebase.messaging().onTokenRefresh((token) => {
+          console.log('Refreshed FCM token: ', token);
+      //    this.manager.setNotificationToken(token);
+        });
+
+
   }
+
+
+
 
 
     makeRemoteRequest = () => {

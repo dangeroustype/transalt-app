@@ -55,7 +55,7 @@ class BoroScreen extends Component {
       source={require('../assets/img/getinvolved.png')}
        />
 
-      <Text style={styles.firstparagraph}>You can make real, tangible changes to how streets and sidewalks function in your Neighborhood. Your local activist committee campaigns and fights for changes on-the-ground in their neighborhoods, like bike lanes and new pedestrian plazas. </Text>
+      <Text style={styles.firstparagraph}>You can make real, tangible changes to how streets and sidewalks function in {this.props.navigation.state.params.committee}. Your local activist committee campaigns and fights for changes on-the-ground in their neighborhoods, like bike lanes and new pedestrian plazas. </Text>
 
 
 
