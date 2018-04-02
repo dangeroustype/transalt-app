@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import {AppRegistry, View, TouchableOpacity, Text, FlatList, ActivityIndicator, StyleSheet } from "react-native";
-import MyWebView from 'react-native-webview-autoheight';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import firebase from 'react-native-firebase';
 
-const customStyle = "<style>* {max-width: 100%;} body {font-family: sans-serif;} h3 {color: #000;}</style>";
-
-
+import BikeForecastArticle from "./BikeForecastArticle";
 
 class BikeForecast extends Component {
 
@@ -22,20 +19,27 @@ class BikeForecast extends Component {
     )
   });
 
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      loading: false,
-      data: [],
-      page: 0,
-      error: null,
-      refreshing: false
-    };
+
+  constructor() {
+      super();
+      this.ref = firebase.firestore().collection('bike_forecast').orderBy("posted").limit(5);
+      this.unsubscribe = null;
+      this.state = {
+          textInput: '',
+          loading: true,
+          bike_forecast: [],
+      };
   }
 
+// @TODO make sure that next page loads work correctly in this architecture
+
+
+
   componentDidMount() {
-    this.makeRemoteRequest();
+
+    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+
     firebase.analytics().setCurrentScreen('BikeForecast');
 
 
@@ -54,123 +58,58 @@ class BikeForecast extends Component {
 
   }
 
+  componentWillUnmount() {
+    this.unsubscribe();
+}
 
+onCollectionUpdate = (querySnapshot) => {
+  const bike_forecast = [];
+  querySnapshot.forEach((doc) => {
+    const { article } = doc.data();
+    bike_forecast.push({
+      key: doc.id,
+      doc, // DocumentSnapshot
+      article
 
+    });
+  });
 
+  this.setState({
+    bike_forecast,
+    loading: false,
+ });
+}
 
-    makeRemoteRequest = () => {
-      const { page, seed } = this.state;
-      const url = `https://www.transalt.org/app/bikeforecast?_format=json&page=${page}`;
-      this.setState({ loading: true });
-
-      fetch(url)
-        .then(res => res.json())
-        .then(res => {
-          this.setState({
-            data: page === 0 ? res.results : [...this.state.data, ...res.results],
-            error: res.error || null,
-            loading: false,
-            refreshing: false
-          });
-        })
-        .catch(error => {
-          this.setState({ error, loading: false });
-        });
-    };
-
-  handleRefresh = () => {
-    this.setState(
-      {
-        page: 0,
-        seed: this.state.seed + 1,
-        refreshing: true
-      },
-      () => {
-        this.makeRemoteRequest();
-      }
-    );
-  };
-
-  handleLoadMore = () => {
-    this.setState(
-      {
-        page: this.state.page + 1
-      },
-      () => {
-        this.makeRemoteRequest();
-      }
-    );
-  };
-
-  renderSeparator = () => {
-    return (
-      <View
-        style={{
-          height: 1,
-          width: "86%",
-          backgroundColor: "#CED0CE",
-          marginLeft: "14%"
-        }}
-      />
-    );
-  };
-
-  renderFooter = () => {
-    if (!this.state.loading) return null;
-
-    return (
-      <View
-        style={{
-          paddingVertical: 20,
-          borderTopWidth: 1,
-          borderColor: "#CED0CE"
-        }}
-      >
-        <ActivityIndicator animating size="large" />
-      </View>
-    );
-  };
 
   render() {
+    if (this.state.loading) {
+      return (
 
+        <View
+          style={{
+            paddingVertical: 20,
+            borderTopWidth: 1,
+            borderColor: "#CED0CE",
+          }}
+        >
+          <ActivityIndicator animating size="large" />
+          </View>
+      )
+    }
+      return (
+        <View>
 
-    return (
-      <View>
-        <FlatList
-          data={this.state.data}
-          renderItem={({ item }) => (
-            <View style={styles.row}>
+            <FlatList
+              data={this.state.bike_forecast}
+              renderItem={({ item }) => <BikeForecastArticle {...item} />}
+            />
 
-
-              <MyWebView
-                  source={{
-                      html: customStyle + item.snippet,
-                      baseUrl: "https://www.transalt.org"
-                    }}
-                  startInLoadingState={true}
-
-              />
-
-
-                </View>
-          )}
-          keyExtractor={item => item.nid}
-          ItemSeparatorComponent={this.renderSeparator}
-          ListHeaderComponent={this.renderHeader}
-          ListFooterComponent={this.renderFooter}
-          onRefresh={this.handleRefresh}
-          refreshing={this.state.refreshing}
-          onEndReached={this.handleLoadMore}
-          onEndReachedThreshold={1}
-        />
-
-      </View>
-    );
-  }
+    </View>
+      )
+    }
 }
 
 const styles = StyleSheet.create({
-
 
   titleView: {
     paddingTop: 10,
