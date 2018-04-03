@@ -25,13 +25,17 @@ class BikeForecast extends Component {
 
     constructor() {
         super();
+        this.onEndReachedCalledDuringMomentum = true;
         this.unsubscribe = null;
         this.state = {
             textInput: '',
             loading: true,
             bike_forecast: [],
+            refreshing: false,
+            page: 1,
+
         };
-        this.ref = firebase.firestore().collection('bike_forecast').orderBy("created", 'DESC').limit(1);
+        this.ref = firebase.firestore().collection('bike_forecast').orderBy("created", 'DESC').limit(this.state.page);
 
     }
 
@@ -81,24 +85,46 @@ onCollectionUpdate = (querySnapshot) => {
   });
 
   this.setState({
-    page: 1,
     bike_forecast,
     loading: false,
  });
+
 }
 
+handleRefresh = () => {
 
-handleLoadMore = () => {
+      this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+
+      console.log('refreshing')
+
+ };
+
+
+ onEndReached = ({ distanceFromEnd }) => {
+     if(!this.onEndReachedCalledDuringMomentum){
+      //   this.fetchData();
+
+         this.setState(
+           {
+
+             page: this.state.page + 1,
+
+           })
+
+         this.onEndReachedCalledDuringMomentum = true;
+     }
+ }
+
+
+fetchData = () => {
   this.setState(
     {
+
       page: this.state.page + 1,
 
-    },
+    });
 
-console.log(this.state.page)
-
-
-  );
+     console.log(this.state.page)
 };
 
 
@@ -124,8 +150,11 @@ console.log(this.state.page)
             <FlatList
               data={this.state.bike_forecast}
               renderItem={({ item }) => <BikeForecastArticle {...item} />}
-              onEndReached={this.handleLoadMore}
-              onEndReachedThreshold={0}
+              onEndReached={this.onEndReached.bind(this)}
+              onEndReachedThreshold={0.5}
+              onMomentumScrollBegin={() => { this.onEndReachedCalledDuringMomentum = false; }}
+              refreshing={this.state.refreshing}
+              onRefresh={this.handleRefresh}
             />
             </View>
 
