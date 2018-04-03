@@ -16,21 +16,24 @@ class BikeForecast extends Component {
          <Icon name="menu" size={30} color="#666" />
         </TouchableOpacity>
       </View>
+
+
     )
   });
 
 
 
-  constructor() {
-      super();
-      this.ref = firebase.firestore().collection('bike_forecast').orderBy("posted").limit(5);
-      this.unsubscribe = null;
-      this.state = {
-          textInput: '',
-          loading: true,
-          bike_forecast: [],
-      };
-  }
+    constructor() {
+        super();
+        this.unsubscribe = null;
+        this.state = {
+            textInput: '',
+            loading: true,
+            bike_forecast: [],
+        };
+        this.ref = firebase.firestore().collection('bike_forecast').orderBy("created", 'DESC').limit(1);
+
+    }
 
 // @TODO make sure that next page loads work correctly in this architecture
 
@@ -56,6 +59,7 @@ class BikeForecast extends Component {
         });
 
 
+
   }
 
   componentWillUnmount() {
@@ -65,20 +69,37 @@ class BikeForecast extends Component {
 onCollectionUpdate = (querySnapshot) => {
   const bike_forecast = [];
   querySnapshot.forEach((doc) => {
-    const { article } = doc.data();
+    const { article, title } = doc.data();
+    console.log ({querySnapshot})
     bike_forecast.push({
       key: doc.id,
       doc, // DocumentSnapshot
-      article
+      article,
+      title
 
     });
   });
 
   this.setState({
+    page: 1,
     bike_forecast,
     loading: false,
  });
 }
+
+
+handleLoadMore = () => {
+  this.setState(
+    {
+      page: this.state.page + 1,
+
+    },
+
+console.log(this.state.page)
+
+
+  );
+};
 
 
   render() {
@@ -90,6 +111,7 @@ onCollectionUpdate = (querySnapshot) => {
             paddingVertical: 20,
             borderTopWidth: 1,
             borderColor: "#CED0CE",
+            flex: 1,
           }}
         >
           <ActivityIndicator animating size="large" />
@@ -97,20 +119,28 @@ onCollectionUpdate = (querySnapshot) => {
       )
     }
       return (
-        <View>
 
+            <View style={styles.container}>
             <FlatList
               data={this.state.bike_forecast}
               renderItem={({ item }) => <BikeForecastArticle {...item} />}
+              onEndReached={this.handleLoadMore}
+              onEndReachedThreshold={0}
             />
+            </View>
 
-    </View>
       )
     }
 }
 
 const styles = StyleSheet.create({
 
+
+container: {
+  flex: 1,
+  flexDirection: 'column',
+
+},
   titleView: {
     paddingTop: 10,
     fontSize: 22,

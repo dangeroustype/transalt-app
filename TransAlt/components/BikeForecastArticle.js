@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, WebView, StyleSheet } from 'react-native';
 import MyWebView from 'react-native-webview-autoheight';
 
-const customStyle = "<style>* {max-width: 100%;} body {font-family: sans-serif;} h3 {color: #000;}</style>";
+const customStyle = "<style>* {max-width: 99%;} body {font-family: sans-serif;} h3 {color: #000;}</style>";
 
 
 
@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
 title: {
   color: '#000000',
   fontSize: 19,
-  textAlign: 'center',
-  fontFamily: 'Gotham-Book',
+  textAlign: 'left',
+  fontFamily: 'Gotham-Bold',
+  padding: 10,
 },
   row: {
 
-    padding: 10,
     backgroundColor: '#ffffff',
     borderTopWidth: 1,
     marginBottom: -1,
@@ -54,7 +54,6 @@ title: {
     borderBottomWidth: 1,
     justifyContent: 'center'
   },
-
 
 
 

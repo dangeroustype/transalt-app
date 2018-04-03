@@ -12,7 +12,7 @@
 		"react-native-firebase": "^3.3.1",
 		"react-native-htmlview": "^0.12.1",
 		"react-native-keyboard-aware-scroll-view": "^0.4.4",
-		"react-native-vector-icons": "^4.5.0",
+		"react-native-vector-icons": "^4.6.0",
 		"react-native-webview-autoheight": "^1.0.5",
 		"react-navigation": "^1.0.3",
 		"tcomb-form-native": "^0.6.11"
