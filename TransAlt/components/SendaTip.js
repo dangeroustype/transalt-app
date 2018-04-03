@@ -98,6 +98,8 @@ class SendaTip extends Component {
 
 
 
+
+
   static navigationOptions = ({ navigation, screenProps }) => ({
     drawerLabel: "Send a Tip",
     title: "Send a Tip",
@@ -110,36 +112,73 @@ class SendaTip extends Component {
     )
   });
 
+  constructor() {
+
+    super();
+      this.state = {
+         confirmation: null,
+
+      };
+
+  }
 
   handleSubmit = () => {
     const value = this._form.getValue();
 
 
+  fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      value
+    }),
+  })
+    .then(response => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error('Something went wrong on api server!');
+      }
+    })
+    .then(response => {
+      console.log(response);
+      // ...
+    }).catch(error => {
+      console.log(error);
+    });
 
-fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
-  method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    value
-  }),
-});
+
+    // clear all fields after submit
+      this.setState({
+        value: null ,
+        confirmation: "Your tip has been sent!"
+
+      });
+
 
   }
+
+
 
   componentDidMount() {
     firebase.analytics().setCurrentScreen('SendaTip');
   }
 
+
+
   render() {
+
+
     return (
       <KeyboardAwareScrollView style={styles.container}>
       <View >
 
       <Text style={styles.intro}>See something out there that we should be aware of?</Text>
 
+      <Text style={styles.confirmation}>{this.state.confirmation}</Text>
 
         <Form
           ref={c => this._form = c}
@@ -152,6 +191,7 @@ fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
         <Button
           title="Send"
           onPress={this.handleSubmit}
+
         />
 
       <View style={{ height: 60 }} />
@@ -175,6 +215,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Gotham-Book',
 
   },
+  confirmation: {
+    padding: 10,
+    textAlign: 'center',
+    fontFamily: 'Gotham-Bold',
+  }
 
   })
 
