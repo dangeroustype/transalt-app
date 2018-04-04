@@ -35,7 +35,7 @@ class BikeForecast extends Component {
             page: 1,
 
         };
-        this.ref = firebase.firestore().collection('bike_forecast').orderBy("created", 'DESC').limit(this.state.page);
+        this.ref = firebase.firestore().collection('bike_forecast').orderBy("created", 'DESC');
 
     }
 
@@ -45,7 +45,7 @@ class BikeForecast extends Component {
 
   componentDidMount() {
 
-    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+    this.unsubscribe = this.ref.limit(this.state.page).onSnapshot(this.onCollectionUpdate)
 
     firebase.analytics().setCurrentScreen('BikeForecast');
 
@@ -93,7 +93,7 @@ onCollectionUpdate = (querySnapshot) => {
 
 handleRefresh = () => {
 
-      this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+      this.unsubscribe = this.ref.limit(this.state.page).onSnapshot(this.onCollectionUpdate)
 
       console.log('refreshing')
 
@@ -102,30 +102,25 @@ handleRefresh = () => {
 
  onEndReached = ({ distanceFromEnd }) => {
      if(!this.onEndReachedCalledDuringMomentum){
-      //   this.fetchData();
 
-         this.setState(
-           {
+          console.log(this.state.page)
 
-             page: this.state.page + 1,
+          // update new page number
 
-           })
+          this.setState({ page: this.state.page + 1 }, function() {
+
+              // load more posts!
+
+               this.unsubscribe = this.ref.limit(this.state.page).onSnapshot(this.onCollectionUpdate)
+
+          });
 
          this.onEndReachedCalledDuringMomentum = true;
      }
  }
 
 
-fetchData = () => {
-  this.setState(
-    {
 
-      page: this.state.page + 1,
-
-    });
-
-     console.log(this.state.page)
-};
 
 
   render() {
