@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
   Image,
+  Linking,
 } from "react-native";
 
 import firebase from 'react-native-firebase';
@@ -87,14 +88,15 @@ class DrawerMenu extends Component {
           <Icon name="bullhorn" size={20} color="#acacac" />
             </View>
           <Text style={styles.menuItemText}>Get Involved</Text>
-
-
-        </TouchableOpacity>
+          </TouchableOpacity>
 
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => this._navigate("Donate", { isStatusBarHidden: false })}
+          onPress={() => {
+               Linking.openURL('https://www.transalt.org/give')
+
+            }}
         >
         <View style={styles.iconRow}>
       <Icon name="star" size={20} color="#acacac" />
@@ -102,16 +104,6 @@ class DrawerMenu extends Component {
           <Text style={styles.menuItemText}>Donate</Text>
         </TouchableOpacity>
 
-
-        <TouchableOpacity
-          style={styles.menuItem}
-          onPress={() => this._navigate("Membership", { isStatusBarHidden: false })}
-        >
-        <View style={styles.iconRow}>
-      <Icon name="heart" size={20} color="#acacac" />
-        </View>
-          <Text style={styles.menuItemText}>Membership</Text>
-        </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.menuItem}

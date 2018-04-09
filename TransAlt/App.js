@@ -6,9 +6,7 @@ import firebase from 'react-native-firebase';
 import BikeForecast from './components/BikeForecast'
 import TravelAdvisories from "./components/TravelAdvisories";
 import GetInvolved from "./components/GetInvolved";
-import Donate from "./components/Donate";
 import SendaTip from "./components/SendaTip";
-import Membership from "./components/Membership";
 import AboutUs from "./components/AboutUs";
 
 
@@ -20,8 +18,6 @@ import DrawerMenu from "./components/DrawerMenu";
     TravelAdvisories: { screen: TravelAdvisories },
     SendaTip: { screen: SendaTip },
     GetInvolved: { screen: GetInvolved },
-    Donate: { screen: Donate },
-    Membership: { screen: Membership },
     AboutUs: { screen: AboutUs },
 
   });

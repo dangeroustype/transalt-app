@@ -22,9 +22,9 @@
 
   NSURL *jsCodeLocation;
 
+ // ENABLE THIS FOR PRODUCTION jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+  
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-
-
 
 
 

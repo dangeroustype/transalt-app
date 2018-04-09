@@ -41,10 +41,10 @@ class GetInvolved extends Component {
 
       <Image style={styles.image} resizeMode={'contain'} source={require('../assets/img/getinvolved.png')}/>
 
-      <Text style={styles.firstparagraph}>You can make real, tangible changes to how streets and sidewalks function in your Neighborhood. Your local activist committee campaigns and fights for changes on-the-ground in their neighborhoods, like bike lanes and new pedestrian plazas.
+      <Text style={styles.firstparagraph}>You can make real, tangible changes to how streets and sidewalks function in New York City. Your local activist committee campaigns and fights for changes on-the-ground in their neighborhoods, like bike lanes and new pedestrian plazas.
       </Text>
 
-      <Text style={styles.choose}>See campaigns in your borough</Text>
+
 
       <View style={styles.flex}>
         <TouchableHighlight style={styles.borobutton} onPress={() => {
@@ -52,7 +52,7 @@ class GetInvolved extends Component {
 
           }}>
           <Text style={styles.borobuttontext}>
-            Manhattan
+            MANHATTAN
           </Text>
         </TouchableHighlight>
 
@@ -63,7 +63,7 @@ class GetInvolved extends Component {
           }}>
 
         <Text style={styles.borobuttontext}>
-          Brooklyn
+          BROOKLYN
         </Text>
       </TouchableHighlight>
       </View>
@@ -76,7 +76,7 @@ class GetInvolved extends Component {
         }}>
 
         <Text style={styles.borobuttontext}>
-          Queens
+          QUEENS
         </Text>
         </TouchableHighlight>
         <TouchableHighlight style={styles.borobutton} onPress={() => {
@@ -85,7 +85,7 @@ class GetInvolved extends Component {
           }}>
 
         <Text style={styles.borobuttontext}>
-          the Bronx
+          BRONX
         </Text>
                 </TouchableHighlight>
       </View>
@@ -99,9 +99,22 @@ class GetInvolved extends Component {
 
                 }}>
         <Text style={styles.borobuttontext}>
-          Staten Island
+          STATEN ISLAND
         </Text>
                 </TouchableHighlight>
+
+
+                <TouchableHighlight style={styles.borobutton} onPress={() => {
+                   Linking.openURL('https://www.transalt.org/citywide')
+
+
+                  }}>
+          <Text style={styles.borobuttontext}>
+            CITYWIDE
+          </Text>
+                  </TouchableHighlight>
+
+
       </View>
 
       <WebView source={{
@@ -123,6 +136,7 @@ var styles = StyleSheet.create({
   },
   flex: {
     flex: 1,
+    paddingHorizontal: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center'
@@ -133,14 +147,15 @@ var styles = StyleSheet.create({
     padding: 10,
     margin: 5,
 
-    backgroundColor: '#cccccc',
+    backgroundColor: '#f15d22',
     borderRadius: 5,
     overflow: 'hidden'
   },
   borobuttontext: {
-    fontFamily: 'Gotham-Book',
+    fontFamily: 'Gotham-Medium',
     textAlign: 'center',
-    fontSize: 19
+    fontSize: 16,
+    color: '#ffffff'
   },
 
   textcontainer: {
@@ -149,10 +164,13 @@ var styles = StyleSheet.create({
   },
   firstparagraph: {
     fontFamily: 'Gotham-Book',
-    color: '#0d9c4a',
-    fontSize: 15,
-    padding: 10
+    color: '#292929',
+    fontSize: 16,
+    lineHeight: 25,
+    paddingHorizontal: 15,
+    paddingVertical: 20,
   },
+
   choose: {
     fontFamily: 'Gotham-Book',
     fontSize: 19,
