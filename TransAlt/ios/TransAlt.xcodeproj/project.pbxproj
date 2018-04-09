@@ -59,6 +59,7 @@
 		C2F492F7038C4AB4AF683AD8 /* Gotham-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3383327B99F45A58CE97349 /* Gotham-BoldItalic.ttf */; };
 		CDF63E3A6CB94EADB0824EAB /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38167BFFAB044346857BFC09 /* Entypo.ttf */; };
 		E450CF1A205C1E8800B99B5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E450CEF2205C1E8800B99B5B /* GoogleService-Info.plist */; };
+		E48CC7E1207BFF4300DE3282 /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48CC7E0207BFEC300DE3282 /* libSplashScreen.a */; };
 		F18585216E9CE37CF749763E /* libPods-TransAltTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F78BDCDF6DCD8F9FA7D02D2 /* libPods-TransAltTests.a */; };
 		FD581F44C6D440799637C182 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE8A251EE1B48A3BF08BEF2 /* libRNVectorIcons.a */; };
 /* End PBXBuildFile section */
@@ -281,6 +282,13 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		E48CC7DF207BFEC300DE3282 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E48CC7B4207BFEC300DE3282 /* SplashScreen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D7682761D8E76B80014119E;
+			remoteInfo = SplashScreen;
+		};
 		E4DDCE7F2059B29100AEB39E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -415,6 +423,7 @@
 		DA5387329664EF092C7F977A /* libPods-TransAlt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransAlt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E450CEF2205C1E8800B99B5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "TransAlt/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E470F6AC20605947004F550E /* TransAlt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TransAlt.entitlements; path = TransAlt/TransAlt.entitlements; sourceTree = "<group>"; };
+		E48CC7B4207BFEC300DE3282 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		E98CF88A49A24B15A0F81902 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		EAB958E148EB4A99DC18F6A1 /* Pods-TransAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransAltTests/Pods-TransAltTests.release.xcconfig"; sourceTree = "<group>"; };
 		FED9E169CF674009804132CD /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
@@ -434,6 +443,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48CC7E1207BFF4300DE3282 /* libSplashScreen.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -664,6 +674,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				E48CC7B4207BFEC300DE3282 /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -724,6 +735,14 @@
 			children = (
 				ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */,
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E48CC7B5207BFEC300DE3282 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E48CC7E0207BFEC300DE3282 /* libSplashScreen.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -941,6 +960,10 @@
 					ProductGroup = E4DDCE8F2059B29200AEB39E /* Products */;
 					ProjectRef = 20D702EF428E45E59458A689 /* RNVectorIcons.xcodeproj */;
 				},
+				{
+					ProductGroup = E48CC7B5207BFEC300DE3282 /* Products */;
+					ProjectRef = E48CC7B4207BFEC300DE3282 /* SplashScreen.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1154,6 +1177,13 @@
 			fileType = archive.ar;
 			path = libRCTBlob.a;
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E48CC7E0207BFEC300DE3282 /* libSplashScreen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSplashScreen.a;
+			remoteRef = E48CC7DF207BFEC300DE3282 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		E4DDCE802059B29100AEB39E /* libjsinspector.a */ = {
@@ -1567,6 +1597,12 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = TransAlt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1593,6 +1629,12 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = TransAlt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

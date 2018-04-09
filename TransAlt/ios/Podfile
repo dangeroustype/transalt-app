@@ -13,6 +13,8 @@ target 'TransAlt' do
   pod 'Crashlytics', '~> 3.9.3'
   pod 'Firebase/Firestore'
 
+    pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
   end
 
   target 'TransAltTests' do
