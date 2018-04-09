@@ -12,7 +12,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "SplashScreen.h"
+// #import "SplashScreen.h"
 
 @implementation AppDelegate
 
@@ -44,7 +44,7 @@
   [FIRApp configure];
   [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
 
-  [SplashScreen show];
+  // [SplashScreen show];
   return YES;
 }
 

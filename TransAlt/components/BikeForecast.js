@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {AppRegistry, View, TouchableOpacity, Text, FlatList, ActivityIndicator, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import firebase from 'react-native-firebase';
-import SplashScreen from 'react-native-splash-screen';
 
 import BikeForecastArticle from "./BikeForecastArticle";
 
@@ -65,7 +64,7 @@ class BikeForecast extends Component {
       //    this.manager.setNotificationToken(token);
         });
 
-     SplashScreen.hide()
+
 
   }
 
