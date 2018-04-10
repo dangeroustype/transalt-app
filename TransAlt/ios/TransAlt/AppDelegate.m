@@ -12,7 +12,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-// #import "SplashScreen.h"
+
 
 @implementation AppDelegate
 
@@ -23,9 +23,9 @@
 
   NSURL *jsCodeLocation;
 
- // ENABLE THIS FOR PRODUCTION jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+ jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"]; // ENABLE THIS FOR PRODUCTION
   
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  // ENABLE THIS FOR DEVELOPMENT  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 
 
 
@@ -44,7 +44,7 @@
   [FIRApp configure];
   [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
 
-  // [SplashScreen show];
+
   return YES;
 }
 

@@ -3,7 +3,6 @@ package com.transportationalternatives.transalt;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage;
@@ -31,14 +30,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new SplashScreenReactPackage(),
             new RNFirebasePackage(),
             new RNFirebaseAnalyticsPackage(),
             new VectorIconsPackage(),
             new RNFirebaseMessagingPackage(),
             new RNFirebasePerformancePackage(),
             new RNFirebaseCrashlyticsPackage(),
-            new RNFirebaseFirestorePackage() 
+            new RNFirebaseFirestorePackage()
       );
     }
 
