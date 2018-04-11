@@ -59,37 +59,6 @@ const stylesheet = _.cloneDeep(t.form.Form.stylesheet);
 stylesheet.textbox.normal.height = 150;
 
 const options = {
-  fields: {
-    name: {
-      label: 'Name',
-      error: 'Please enter your name',
-      returnKeyType: 'next',
-      blurOnSubmit: false,
-  //    onSubmitEditing: () => {this.refs.form.getComponent('email').refs.input.focus()},
-  //   @TODO Upon hitting next, have the cursor pop into the next text box.
-      autoFocus: true,
-    },
-    email: {
-      label: 'Email',
-      error: 'We require an email address to follow up with you, if necessary.',
-      ref:'yourtip',
-      keyboardType: 'email-address',
-      autoCapitalize: 'none',
-      blurOnSubmit: false,
-      returnKeyType: 'next',
-      maxHeight: 300,
-    },
-    yourtip: {
-      label: 'Your Tip',
-      ref:'yourtip',
-      error: 'Please include something to send',
-      multiline: true,
-      textAlignVertical: 'top',
-      stylesheet: stylesheet // overriding the style of the textbox
-
-    },
-  },
-  stylesheet: formStyles,
 };
 
 
@@ -123,7 +92,7 @@ class SendaTip extends Component {
   }
 
   handleSubmit = () => {
-    const value = this._form.getValue();
+    const value = this.tipform.getValue();
 
 
   fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
@@ -180,11 +149,46 @@ class SendaTip extends Component {
 
       <Text style={styles.confirmation}>{this.state.confirmation}</Text>
 
+
+
         <Form
-          ref={c => this._form = c}
+          ref={c => this.tipform = c}
           type={User}
-          options={options}
-        />
+                options={{
+                    fields: {
+                      name: {
+                        label: 'Name',
+                        error: 'Please enter your name',
+                        returnKeyType: 'next',
+                        blurOnSubmit: false,
+                        onSubmitEditing: () => this.tipform.getComponent('email').refs.input.focus(),
+                        autoFocus: true,
+                      },
+                      email: {
+                        label: 'Email',
+                        error: 'We require an email address to follow up with you, if necessary.',
+                        ref:'yourtip',
+                        keyboardType: 'email-address',
+                        autoCapitalize: 'none',
+                        blurOnSubmit: false,
+                        returnKeyType: 'next',
+                        onSubmitEditing: () => this.tipform.getComponent('yourtip').refs.input.focus(),
+                        maxHeight: 300,
+                      },
+                      yourtip: {
+                        label: 'Your Tip',
+                        ref:'yourtip',
+                        error: 'Please include something to send',
+                        multiline: true,
+                        returnKeyLabel: 'Enter',
+                        textAlignVertical: 'top',
+                        stylesheet: stylesheet // overriding the style of the textbox
+
+                      },
+                    },
+                    stylesheet: formStyles,
+  }}
+              />
 
 
 
