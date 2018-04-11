@@ -94,7 +94,7 @@ class DrawerMenu extends Component {
         <TouchableOpacity
           style={styles.menuItem}
           onPress={() => {
-               Linking.openURL('https://www.transalt.org/give')
+               Linking.openURL('https://www.transalt.org/giveapp')
 
             }}
         >
