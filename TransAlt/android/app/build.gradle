@@ -159,6 +159,7 @@ dependencies {
     implementation  "com.google.firebase:firebase-core:12.0.0"
     implementation  "com.google.firebase:firebase-analytics:12.0.0"
     implementation  "com.google.firebase:firebase-messaging:12.0.0"
+    implementation 'me.leolin:ShortcutBadger:1.1.21@aar'
     implementation  "com.google.firebase:firebase-perf:12.0.0"
     implementation  "com.google.firebase:firebase-crash:12.0.0"
     implementation  project(':react-native-vector-icons')

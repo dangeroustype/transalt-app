@@ -141,7 +141,7 @@ class BikeForecast extends Component {
           borderColor: "#CED0CE",
           flex: 1
         }}>
-        <ActivityIndicator animating="animating" size="large"/>
+        <ActivityIndicator size="large"/>
       </View>)
     }
     return (<View style={styles.container}>
