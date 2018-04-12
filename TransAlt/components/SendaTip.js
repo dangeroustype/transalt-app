@@ -57,6 +57,8 @@ const stylesheet = _.cloneDeep(t.form.Form.stylesheet);
 
 // overriding the text color
 stylesheet.textbox.normal.height = 150;
+stylesheet.textbox.normal.paddingTop = 5;
+stylesheet.textbox.normal.textAlignVertical = 'top'
 
 const options = {
 };
@@ -181,7 +183,6 @@ class SendaTip extends Component {
                         error: 'Please include something to send',
                         multiline: true,
                         returnKeyLabel: 'Enter',
-                        textAlignVertical: 'top',
                         stylesheet: stylesheet // overriding the style of the textbox
 
                       },
