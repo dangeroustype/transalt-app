@@ -128,20 +128,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#363636',
   },
   menuItem: {
+
+    flexDirection: 'row',
+     justifyContent: 'flex-start',
     padding: 10,
-    justifyContent: "center",
     marginBottom: 5,
     backgroundColor: '#555555',
+      height: 40,
   },
   menuItemText: {
     fontFamily: 'Gotham-Book',
     color: '#ffffff',
     fontSize: 17,
-    paddingLeft: 35,
+    paddingLeft: 20,
+
   },
   iconRow: {
-  width: 100,
-  flex: 1,
+
+
+
   }
 });
 
