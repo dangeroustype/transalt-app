@@ -173,19 +173,22 @@ lastUpdatedText: {
 
   color: '#666666',
   textAlign: 'center',
-  padding: 15,
+
   fontFamily: 'Gotham-Bold',
 
 },
 
   a: {
-    color: '#009b40', // make links coloured pink
+    color: '#ff3600', // make links coloured pink
   },
 
   p: {
-    paddingBottom: 15,
+
     fontFamily: 'Gotham-Book',
     fontSize: 19,
+    paddingLeft: 8,
+    paddingRight: 10,
+    paddingTop: 15,
   },
   strong: {
         fontFamily: 'Gotham-Bold',
@@ -208,7 +211,6 @@ lastUpdatedText: {
 
   container: {
     flex: 1,
-    padding: 10,
     backgroundColor: '#ffffff',
   },
 

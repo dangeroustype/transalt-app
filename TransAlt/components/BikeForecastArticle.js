@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, WebView, StyleSheet } from 'react-native';
 import MyWebView from 'react-native-webview-autoheight';
 
-const customStyle = "<style>* {max-width: 99%;} body {font-family: sans-serif;} h3 {color: #000;}</style>";
+const customStyle = "<style>* {max-width: 98.5%;} a {color: #ff3600; text-decoration: none} p { line-height: 23px}  body {font-family: sans-serif;} h3 {color: #000;}</style>";
 
 
 
@@ -14,7 +14,7 @@ class BikeForecastArticle extends Component {
         return (
                   <View style={styles.row}>
                   <Text style={styles.title}>{this.props.title}</Text>
-                  <MyWebView
+                  <MyWebView style={styles.webcontainer}
                       source={{
                           html: customStyle + this.props.article,
                           baseUrl: "https://www.transalt.org"
@@ -42,7 +42,11 @@ title: {
   fontSize: 19,
   textAlign: 'left',
   fontFamily: 'Gotham-Bold',
-  padding: 10,
+  padding: 13,
+},
+
+webcontainer: {
+  marginLeft: 5,
 },
   row: {
 

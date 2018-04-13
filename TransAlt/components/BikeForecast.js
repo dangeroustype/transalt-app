@@ -208,7 +208,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '700',
     textAlign: 'center',
-    paddingTop: 30
+    paddingTop: 30,
+
   }
 
 })

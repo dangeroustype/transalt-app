@@ -154,7 +154,7 @@ var styles = StyleSheet.create({
   borobuttontext: {
     fontFamily: 'Gotham-Medium',
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 14,
     color: '#ffffff'
   },
 
@@ -184,8 +184,9 @@ var styles = StyleSheet.create({
     paddingBottom: 10
   },
   image: {
+    marginTop: -1,
     width: win.width,
-    height: 650 * ratio, //362 is actual height of image
+    height: 760 * ratio, //362 is actual height of image
   }
 
 });
