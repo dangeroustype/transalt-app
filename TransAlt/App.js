@@ -13,10 +13,9 @@ import AboutUs from "./components/AboutUs";
 import DrawerMenu from "./components/DrawerMenu";
 
   const MainScreenNavigator = StackNavigator({
-
+    SendaTip: { screen: SendaTip },
     BikeForecast: { screen: BikeForecast },
     TravelAdvisories: { screen: TravelAdvisories },
-    SendaTip: { screen: SendaTip },
     GetInvolved: { screen: GetInvolved },
     AboutUs: { screen: AboutUs },
 

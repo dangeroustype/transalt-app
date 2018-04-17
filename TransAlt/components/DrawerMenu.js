@@ -87,7 +87,7 @@ class DrawerMenu extends Component {
             <View style={styles.iconRow}>
           <Icon name="bullhorn" size={20} color="#acacac" />
             </View>
-          <Text style={styles.menuItemText}>Get Involved</Text>
+          <Text style={styles.menuItemText}>Get More Involved</Text>
           </TouchableOpacity>
 
 

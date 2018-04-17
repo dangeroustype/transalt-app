@@ -4,8 +4,11 @@ import {
   View,
   WebView,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   StyleSheet,
   TouchableHighlight,
+  Modal,
+  Image,
   Button
 } from "react-native";
 
@@ -17,14 +20,20 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 
 import t from 'tcomb-form-native'; // 0.6.9
 
+import ImageFactory from 'react-native-image-picker-form' // for photo upload
+
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
+import Loader from "./Loader"
 
 const Form = t.form.Form;
 
 const User = t.struct({
   name: t.String,
   email: t.String,
+  image: t.maybe(t.String),
   yourtip: t.String,
+
 });
 
 const formStyles = {
@@ -60,9 +69,6 @@ stylesheet.textbox.normal.height = 150;
 stylesheet.textbox.normal.paddingTop = 5;
 stylesheet.textbox.normal.textAlignVertical = 'top'
 
-const options = {
-};
-
 
 
 class SendaTip extends Component {
@@ -87,50 +93,119 @@ class SendaTip extends Component {
 
     super();
       this.state = {
-         confirmation: null,
+
+         successState: false,
+         loading: false,
 
       };
 
   }
 
   handleSubmit = () => {
-    const value = this.tipform.getValue();
 
+    this.setState({
+      loading: true,
 
-  fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      value
-    }),
-  })
-    .then(response => {
-      if (response.status === 200) {
-        return response.json();
-      } else {
-        throw new Error('Something went wrong on api server!');
-      }
-    })
-    .then(response => {
-      console.log(response);
-      // ...
-    }).catch(error => {
-      console.log(error);
     });
 
 
-    // clear all fields after submit
-      this.setState({
-        value: null ,
-        confirmation: "Your tip has been sent!"
+    var value = this.tipform.getValue();
 
-      });
+      var rawfilename = value.image
+
+ // is there an image in this post? If so, upload it!
+
+    if (typeof(value.image) !== 'undefined' || value != null) {
 
 
-  }
+
+        console.log('there is an image. upload it!');
+
+    var filename= rawfilename.split('\\').pop().split('/').pop();
+
+    firebase.storage()
+    .ref(filename)
+    .putFile(value.image)
+
+
+
+    .then(uploadedFile => {
+        //success
+
+          var formvalues = this.tipform.getValue();
+
+          console.log('Upload of image succeeded!');
+
+            var fulldlurl = uploadedFile.downloadURL + '.jpg'
+
+    var pair = {downloadurl: fulldlurl };
+      value = {...formvalues, ...pair};
+
+
+            console.log('The full object to be sent to the API follows');
+
+            console.log(value);
+
+          fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              value
+            }),
+          })
+            .then(response => {
+              if (response.status === 200) {
+                return response.json();
+              } else {
+                throw new Error('Something went wrong on api server!');
+              }
+            })
+            .then(response => {
+
+                console.log('API response follows.');
+              console.log(response);
+
+              this.setState({
+                loading: false,
+                successState: true,
+              });
+
+              // ...
+            }).catch(error => {
+                  console.log('Image upload failed.');
+              console.log(error);
+
+              this.setState({
+                loading: false
+              });
+
+            });
+
+
+
+
+
+
+    })
+    .catch(err => {
+        //Error
+
+          console.log('Upload failed.');
+    })
+
+  }  // end if image loop
+
+  // clear all fields after submit
+    this.setState({
+      value: null ,
+
+
+    });
+
+  }  // end handleSubmit
 
 
 
@@ -144,14 +219,43 @@ class SendaTip extends Component {
 
 
     return (
+
+
       <KeyboardAwareScrollView style={styles.container}>
+
+
+   //Success modal
+
+
+
+      <Modal
+        transparent={true}
+        animationType={'fade'}
+        visible={this.state.successState}
+        onRequestClose={() => { this.setsuccessState(false)}}>
+
+         <TouchableWithoutFeedback onPress={() => this.setsuccessState(false)}>
+        <View style={styles.modalBackground}>
+          <View style={styles.activityIndicatorWrapper}>
+
+
+                <Image
+                style={styles.image}
+                 resizeMode={'contain'}
+
+                source={require('../assets/img/success.png')}
+                 />
+          <Text style={styles.successtext}>Thank you for sending a tip!</Text>
+          </View>
+        </View>
+          </TouchableWithoutFeedback>
+      </Modal>
+
       <View >
+      <Loader
+  loading={this.state.loading} />
 
       <Text style={styles.intro}>See something out there that we should be aware of?</Text>
-
-      <Text style={styles.confirmation}>{this.state.confirmation}</Text>
-
-
 
         <Form
           ref={c => this.tipform = c}
@@ -159,7 +263,7 @@ class SendaTip extends Component {
                 options={{
                     fields: {
                       name: {
-                        label: 'Name',
+                        label: 'Name *',
                         error: 'Please enter your name',
                         returnKeyType: 'next',
                         blurOnSubmit: false,
@@ -167,7 +271,7 @@ class SendaTip extends Component {
                         autoFocus: true,
                       },
                       email: {
-                        label: 'Email',
+                        label: 'Email *',
                         error: 'We require an email address to follow up with you, if necessary.',
                         ref:'yourtip',
                         keyboardType: 'email-address',
@@ -177,8 +281,20 @@ class SendaTip extends Component {
                         onSubmitEditing: () => this.tipform.getComponent('yourtip').refs.input.focus(),
                         maxHeight: 300,
                       },
+                      image: {
+                        config: {
+                          title: 'Select image',
+                          options: ['Open camera', 'Select from gallery', 'Cancel'],
+                          // Used on Android to style BottomSheet
+                          style: {
+                            titleFontFamily: 'Roboto'
+                          }
+                        },
+                        error: 'No image provided',
+                        factory: ImageFactory
+                      },
                       yourtip: {
-                        label: 'Your Tip',
+                        label: 'Your Tip *',
                         ref:'yourtip',
                         error: 'Please include something to send',
                         multiline: true,
@@ -186,6 +302,7 @@ class SendaTip extends Component {
                         stylesheet: stylesheet // overriding the style of the textbox
 
                       },
+
                     },
                     stylesheet: formStyles,
   }}
@@ -216,14 +333,36 @@ const styles = StyleSheet.create({
   intro: {
     paddingBottom: 20,
     fontSize: 19,
+    lineHeight: 26,
     textAlign: 'center',
     fontFamily: 'Gotham-Book',
 
   },
-  confirmation: {
-    padding: 10,
+  image: {
+    height: 60,
+
+  },
+  successtext: {
     textAlign: 'center',
-    fontFamily: 'Gotham-Bold',
+    fontFamily: 'Gotham-Book',
+    fontSize: 18,
+  },
+  modalBackground: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    backgroundColor: '#00000040'
+  },
+  activityIndicatorWrapper: {
+    backgroundColor: '#FFFFFF',
+    height: 150,
+    width: '80%',
+    borderRadius: 10,
+    paddingTop: 10,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around'
   }
 
   })

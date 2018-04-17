@@ -23,7 +23,7 @@ const ratio = win.width / 1140; //541 is actual image width
 
 class GetInvolved extends Component {
 
-  static navigationOptions = ({navigation, screenProps}) => ({drawerLabel: "Get Involved", title: "Get Involved", headerLeft: (<View style={{
+  static navigationOptions = ({navigation, screenProps}) => ({drawerLabel: "Get More Involved", title: "Get Involved", headerLeft: (<View style={{
       paddingHorizontal: 10
     }}>
     <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
