@@ -29,9 +29,11 @@ import Loader from "./Loader"
 const Form = t.form.Form;
 
 const User = t.struct({
+
+  image: t.maybe(t.String),
   name: t.String,
   email: t.String,
-  image: t.maybe(t.String),
+
   yourtip: t.String,
 
 });
@@ -40,7 +42,7 @@ const formStyles = {
   ...Form.stylesheet,
   formGroup: {
     normal: {
-      marginBottom: 10
+      marginBottom: 5
     },
   },
   controlLabel: {
@@ -64,7 +66,6 @@ var _ = require('lodash');
 // clone the default stylesheet
 const stylesheet = _.cloneDeep(t.form.Form.stylesheet);
 
-// overriding the text color
 stylesheet.textbox.normal.height = 150;
 stylesheet.textbox.normal.paddingTop = 5;
 stylesheet.textbox.normal.textAlignVertical = 'top'
@@ -101,7 +102,20 @@ class SendaTip extends Component {
 
   }
 
+  clearForm() {
+    // clear content from all textbox
+    this.setState({
+      value: null,
+
+
+    });
+
+  }
+
+
   handleSubmit = () => {
+console.log('see state of image field with value?');
+   console.log(this.state);
 
     this.setState({
       loading: true,
@@ -109,15 +123,19 @@ class SendaTip extends Component {
     });
 
 
-    var value = this.tipform.getValue();
+    //var value = this.tipform.getValue(); This function does an unwanted
+    //validate operation. Refactored below:
 
-      var rawfilename = value.image
+const value = this.tipform.refs.input.getValue();
+
+  console.log('new value call. below!');
+            console.log(value);
+
+    var rawfilename = value.image
 
  // is there an image in this post? If so, upload it!
 
-    if (typeof(value.image) !== 'undefined' || value != null) {
-
-
+if( rawfilename && rawfilename !== "null" && rawfilename !== "undefined" ){
 
         console.log('there is an image. upload it!');
 
@@ -132,19 +150,18 @@ class SendaTip extends Component {
     .then(uploadedFile => {
         //success
 
-          var formvalues = this.tipform.getValue();
+
 
           console.log('Upload of image succeeded!');
 
             var fulldlurl = uploadedFile.downloadURL + '.jpg'
 
-    var pair = {downloadurl: fulldlurl };
-      value = {...formvalues, ...pair};
 
+        const postvalue = Object.assign({}, value, {image: fulldlurl});
 
             console.log('The full object to be sent to the API follows');
 
-            console.log(value);
+            console.log(postvalue);
 
           fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
             method: 'POST',
@@ -153,7 +170,7 @@ class SendaTip extends Component {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              value
+              postvalue
             }),
           })
             .then(response => {
@@ -165,13 +182,16 @@ class SendaTip extends Component {
             })
             .then(response => {
 
-                console.log('API response follows.');
+              console.log('API response follows.');
+
               console.log(response);
 
               this.setState({
                 loading: false,
                 successState: true,
               });
+
+              this.clearForm();
 
               // ...
             }).catch(error => {
@@ -184,36 +204,64 @@ class SendaTip extends Component {
 
             });
 
+    }) // end uploadfile event
 
 
+  } else {  // end if image loop
 
 
-
+  fetch('https://hooks.zapier.com/hooks/catch/372105/k6zby5/', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      value
+    }),
+  })
+    .then(response => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error('Something went wrong on api server!');
+      }
     })
-    .catch(err => {
-        //Error
+    .then(response => {
 
-          console.log('Upload failed.');
-    })
+        console.log('API response follows.');
+      console.log(response);
 
-  }  // end if image loop
+      this.setState({
+        loading: false,
+        successState: true,
 
-  // clear all fields after submit
-    this.setState({
-      value: null ,
+      });
+
+    }) // end then.response
 
 
-    });
+  }  // end else
 
-  }  // end handleSubmit
+
+} // end handleSubmit
 
 
 
   componentDidMount() {
     firebase.analytics().setCurrentScreen('SendaTip');
+
+
+      this.setState({
+        successState: false,
+        loading: false,
+        value: null,
+      });
+
   }
 
 
+ turnoffSuccess = () => this.setState({ successState: false })
 
   render() {
 
@@ -224,17 +272,16 @@ class SendaTip extends Component {
       <KeyboardAwareScrollView style={styles.container}>
 
 
-   //Success modal
-
-
 
       <Modal
         transparent={true}
         animationType={'fade'}
         visible={this.state.successState}
-        onRequestClose={() => { this.setsuccessState(false)}}>
+        onRequestClose={this.turnoffSuccess}
+        >
 
-         <TouchableWithoutFeedback onPress={() => this.setsuccessState(false)}>
+
+         <TouchableWithoutFeedback onPress={this.turnoffSuccess}>
         <View style={styles.modalBackground}>
           <View style={styles.activityIndicatorWrapper}>
 
@@ -249,7 +296,10 @@ class SendaTip extends Component {
           </View>
         </View>
           </TouchableWithoutFeedback>
+
       </Modal>
+
+
 
       <View >
       <Loader
@@ -268,7 +318,7 @@ class SendaTip extends Component {
                         returnKeyType: 'next',
                         blurOnSubmit: false,
                         onSubmitEditing: () => this.tipform.getComponent('email').refs.input.focus(),
-                        autoFocus: true,
+
                       },
                       email: {
                         label: 'Email *',
@@ -276,6 +326,7 @@ class SendaTip extends Component {
                         ref:'yourtip',
                         keyboardType: 'email-address',
                         autoCapitalize: 'none',
+                        autoCorrect: false,
                         blurOnSubmit: false,
                         returnKeyType: 'next',
                         onSubmitEditing: () => this.tipform.getComponent('yourtip').refs.input.focus(),
@@ -305,21 +356,23 @@ class SendaTip extends Component {
 
                     },
                     stylesheet: formStyles,
-  }}
-              />
+  }} />
 
+          <View style={styles.submitbutton}>
 
+        <Button style={styles.submitbuttonitself}
 
-        <Button
           title="Send"
           onPress={this.handleSubmit}
 
         />
+          </View>
 
-      <View style={{ height: 60 }} />
-
-      </View>
+        </View>
       </KeyboardAwareScrollView>
+
+
+
     );
   }
 }
@@ -329,6 +382,15 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#ffffff',
+  },
+  submitbutton: {
+    marginBottom: 35,
+    height: 70,
+  },
+  submitbuttonitself: {
+      height: 70,
+      width: '100%',
+      marginBottom: 35,
   },
   intro: {
     paddingBottom: 20,
@@ -352,7 +414,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'space-around',
-    backgroundColor: '#00000040'
+    backgroundColor: 'rgba(0,0,0,0.6)'
   },
   activityIndicatorWrapper: {
     backgroundColor: '#FFFFFF',

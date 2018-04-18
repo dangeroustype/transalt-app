@@ -11,6 +11,7 @@ import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
 import io.invertase.firebase.perf.RNFirebasePerformancePackage;
+import io.invertase.firebase.storage.RNFirebaseStoragePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -40,7 +41,8 @@ public class MainApplication extends Application implements ReactApplication {
             new RNFirebaseNotificationsPackage(),
             new RNFirebasePerformancePackage(),
             new RNFirebaseCrashlyticsPackage(),
-            new RNFirebaseFirestorePackage()
+            new RNFirebaseFirestorePackage(),
+            new RNFirebaseStoragePackage()
       );
     }
 
