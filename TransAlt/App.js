@@ -13,8 +13,8 @@ import AboutUs from "./components/AboutUs";
 import DrawerMenu from "./components/DrawerMenu";
 
   const MainScreenNavigator = StackNavigator({
-    SendaTip: { screen: SendaTip },
     BikeForecast: { screen: BikeForecast },
+    SendaTip: { screen: SendaTip },
     TravelAdvisories: { screen: TravelAdvisories },
     GetInvolved: { screen: GetInvolved },
     AboutUs: { screen: AboutUs },
