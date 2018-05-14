@@ -3,6 +3,7 @@ import { AppRegistry } from "react-native";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 import firebase from 'react-native-firebase';
 
+import HomeScreen from "./components/HomeScreen";
 import BikeForecast from './components/BikeForecast'
 import TravelAdvisories from "./components/TravelAdvisories";
 import GetInvolved from "./components/GetInvolved";
@@ -13,6 +14,7 @@ import AboutUs from "./components/AboutUs";
 import DrawerMenu from "./components/DrawerMenu";
 
   const MainScreenNavigator = StackNavigator({
+    HomeScreen: { screen: HomeScreen },
     BikeForecast: { screen: BikeForecast },
     SendaTip: { screen: SendaTip },
     TravelAdvisories: { screen: TravelAdvisories },
