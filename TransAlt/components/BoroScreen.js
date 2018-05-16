@@ -27,7 +27,7 @@ class BoroScreen extends Component {
     title: "Your Neighborhood",
     headerLeft: (
       <View style={{ paddingHorizontal: 10 }}>
-        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
          <Icon name="menu" size={30} color="#666" />
         </TouchableOpacity>
       </View>

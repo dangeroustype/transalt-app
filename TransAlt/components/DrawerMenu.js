@@ -13,17 +13,22 @@ import firebase from 'react-native-firebase';
 
 import Icon from "react-native-vector-icons/FontAwesome";
 
-import { NavigationActions } from "react-navigation";
+import { NavigationActions, StackActions } from "react-navigation";
 
 class DrawerMenu extends Component {
+
   _navigate(route) {
     return this.props.navigation.dispatch(
-      NavigationActions.reset({
+      StackActions.reset({
         index: 0,
-        actions: [NavigationActions.navigate({ routeName: `${route}` })]
+        actions: [
+          NavigationActions.navigate({ routeName: `${route}` })
+
+        ]
       })
     );
   }
+
   render() {
     return (
       <View style={styles.container}>

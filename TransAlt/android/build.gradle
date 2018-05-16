@@ -9,8 +9,8 @@ buildscript {
        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
-        classpath 'com.google.gms:google-services:3.1.2'
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.google.gms:google-services:3.2.1'
         classpath 'com.google.firebase:firebase-plugins:1.1.1'
         classpath 'io.fabric.tools:gradle:1.24.4'
         // NOTE: Do not place your application dependencies here; they belong
@@ -28,11 +28,9 @@ allprojects {
             url "$rootDir/../node_modules/react-native/android"
         }
         // jitpack repo is necessary to fetch ucrop dependency
-     maven { url "https://jitpack.io" }
-     
-        maven {
-            url 'https://maven.google.com/'
-        }
+        maven { url "https://jitpack.io" }
+
+        google()
 
     }
 }

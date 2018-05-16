@@ -18,7 +18,7 @@ class BikeForecast extends Component {
   static navigationOptions = ({navigation, screenProps}) => ({drawerLabel: "Bike Forecast", title: "Bike Forecast", headerLeft: (<View style={{
       paddingHorizontal: 10
     }}>
-    <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+    <TouchableOpacity onPress={() => navigation.openDrawer()}>
       <Icon name="menu" size={30} color="#666"/>
     </TouchableOpacity>
   </View>)});
@@ -37,6 +37,13 @@ class BikeForecast extends Component {
     this.ref = firebase.firestore().collection('bike_forecast').orderBy("created", 'DESC');
 
   }
+
+componentWillMount(){
+
+this.props.navigation.closeDrawer();
+
+ }
+
 
   // @TODO make sure that next page loads work correctly in this architecture
 

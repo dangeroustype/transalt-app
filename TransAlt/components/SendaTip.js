@@ -83,7 +83,7 @@ class SendaTip extends Component {
     title: "Send a Tip",
     headerLeft: (
       <View style={{ paddingHorizontal: 10 }}>
-        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
          <Icon name="menu" size={30} color="#666" />
         </TouchableOpacity>
       </View>
@@ -247,6 +247,11 @@ if( rawfilename && rawfilename !== "null" && rawfilename !== "undefined" ){
 } // end handleSubmit
 
 
+componentWillMount(){
+
+this.props.navigation.closeDrawer();
+
+ }
 
   componentDidMount() {
     firebase.analytics().setCurrentScreen('SendaTip');

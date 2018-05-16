@@ -11,7 +11,7 @@ class TravelAdvisories extends Component {
     title: "Travel Advisories",
     headerLeft: (
       <View style={{ paddingHorizontal: 10 }}>
-        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
          <Icon name="menu" size={30} color="#666" />
         </TouchableOpacity>
       </View>
@@ -29,6 +29,12 @@ class TravelAdvisories extends Component {
       refreshing: false
     };
   }
+
+  componentWillMount(){
+
+  this.props.navigation.closeDrawer();
+
+   }
 
   componentDidMount() {
     this.makeRemoteRequest();

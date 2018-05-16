@@ -14,28 +14,32 @@ import firebase from 'react-native-firebase';
 
 import Icon from "react-native-vector-icons/FontAwesome";
 
-import { NavigationActions } from "react-navigation";
+import { NavigationActions, StackActions } from "react-navigation";
 
 class HomeScreen extends Component {
+
+  _navigate(route) {
+    return this.props.navigation.dispatch(
+      StackActions.reset({
+        index: 0,
+        actions: [
+          NavigationActions.navigate({ routeName: `${route}` })
+
+        ]
+      })
+    );
+  }
+
 
   static navigationOptions = ({navigation, screenProps}) => ({drawerLabel: "Home", title: "TransAlt", headerLeft: (<View style={{
       paddingHorizontal: 10
     }}>
-    <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+    <TouchableOpacity onPress={() => navigation.openDrawer()}>
       <Icon name="bars" size={30} color="#666"/>
     </TouchableOpacity>
   </View>)});
 
 
-
-  _navigate(route) {
-    return this.props.navigation.dispatch(
-      NavigationActions.reset({
-        index: 0,
-        actions: [NavigationActions.navigate({ routeName: `${route}` })]
-      })
-    );
-  }
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -54,8 +58,7 @@ class HomeScreen extends Component {
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() =>
-            this._navigate("BikeForecast", { isStatusBarHidden: false })}
+          onPress={() => this._navigate("BikeForecast")}
         >
         <View style={styles.iconRow}>
           <Icon name="calendar" size={50} color="#f15d22" />
@@ -66,7 +69,7 @@ class HomeScreen extends Component {
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => this._navigate("TravelAdvisories", { isStatusBarHidden: false })}
+          onPress={() => this._navigate("TravelAdvisories")}
         >
 
         <View style={styles.iconRow}>
@@ -83,7 +86,7 @@ class HomeScreen extends Component {
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => this._navigate("SendaTip", { isStatusBarHidden: false })}
+          onPress={() => this._navigate("SendaTip")}
         >
         <View style={styles.iconRow}>
           <Icon name="paper-plane" size={50} color="#f15d22" />
@@ -94,7 +97,7 @@ class HomeScreen extends Component {
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => this._navigate("GetInvolved", { isStatusBarHidden: false })}
+          onPress={() => this._navigate("GetInvolved")}
         >
             <View style={styles.iconRow}>
           <Icon name="bullhorn" size={50} color="#f15d22" />
@@ -123,7 +126,7 @@ class HomeScreen extends Component {
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => this._navigate("AboutUs", { isStatusBarHidden: false })}
+          onPress={() => this._navigate("AboutUs")}
         >
 
         <View style={styles.iconRow}>

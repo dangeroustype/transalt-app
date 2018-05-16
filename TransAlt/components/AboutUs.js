@@ -24,15 +24,22 @@ class AboutUs extends Component {
     title: "About TransAlt",
     headerLeft: (
       <View style={{ paddingHorizontal: 10 }}>
-        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
          <Icon name="menu" size={30} color="#666" />
         </TouchableOpacity>
       </View>
     )
   });
 
+  componentWillMount(){
+
+  this.props.navigation.closeDrawer();
+
+   }
+
   componentDidMount() {
     firebase.analytics().setCurrentScreen('AboutUs');
+
   }
 
 

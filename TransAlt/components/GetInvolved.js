@@ -26,10 +26,16 @@ class GetInvolved extends Component {
   static navigationOptions = ({navigation, screenProps}) => ({drawerLabel: "Get More Involved", title: "Get Involved", headerLeft: (<View style={{
       paddingHorizontal: 10
     }}>
-    <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+    <TouchableOpacity onPress={() => navigation.openDrawer()}>
       <Icon name="menu" size={30} color="#666"/>
     </TouchableOpacity>
   </View>)});
+
+  componentWillMount(){
+
+  this.props.navigation.closeDrawer();
+
+   }
 
   componentDidMount() {
     firebase.analytics().setCurrentScreen('GetInvolved');
