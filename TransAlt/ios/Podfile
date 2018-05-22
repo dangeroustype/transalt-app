@@ -6,7 +6,7 @@ target 'TransAlt' do
   # use_frameworks!
 
   # Pods for TransAlt
-  pod 'Firebase/Core', '~> 4.13.0'
+  pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'Firebase/Performance'
   pod 'Fabric', '~> 1.7.5'
