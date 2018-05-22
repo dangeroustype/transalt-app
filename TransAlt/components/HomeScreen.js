@@ -18,6 +18,33 @@ import { NavigationActions, StackActions } from "react-navigation";
 
 class HomeScreen extends Component {
 
+  componentDidMount() {
+
+  firebase.messaging().hasPermission().then(enabled => {
+    if (enabled) {
+      // user has permissions
+
+//     Enable this to get the FCM token to send test notifications
+//      firebase.messaging().getToken()
+//            .then((token) => {
+//                console.log('Device FCM Token: ', token);
+//            });
+
+    } else {
+      // user doesn't have permission
+
+      firebase.messaging().requestPermission().then(() => {
+        // User has authorised
+
+      }).catch(error => {
+        // User has rejected permissions
+      });
+
+    }
+  });
+
+  }
+
   _navigate(route) {
     return this.props.navigation.dispatch(
       StackActions.reset({
